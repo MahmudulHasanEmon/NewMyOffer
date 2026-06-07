@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary"
+    tools:context=".activity.login_or_signup.LoginActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:padding="@dimen/_15dp">
+
+        <ImageView
+            android:id="@+id/bg_img"
+            android:layout_width="@dimen/_200dp"
+            android:layout_height="200dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginHorizontal="@dimen/_20dp"
+            android:layout_marginTop="@dimen/_20dp"
+            android:src="@drawable/login_bg" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/bg_img"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/bangla_bold"
+            android:text="লগইন / রেজিস্টার"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_24sp" />
+
+        <TextView
+            android:id="@+id/tvSubTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvTitle"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/bangla_medium"
+            android:text="হ্যালো, আমাদের প্ল্যাটফর্মে আপনাকে স্বাগতম"
+            android:textColor="#bbb"
+            android:textSize="@dimen/_14sp" />
+
+
+        <com.holystock.newmyoffer.views.BorderView
+            android:id="@+id/ed_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_55dp"
+            android:layout_below="@id/tvSubTitle"
+            android:layout_marginHorizontal="@dimen/_15dp"
+            android:layout_marginTop="@dimen/_25dp"
+            android:paddingHorizontal="@dimen/_15dp"
+            app:bgColor="@android:color/white"
+            app:borderColor="@color/greyLight"
+            app:borderWidth="@dimen/_1.5dp"
+            app:cornerRadius="@dimen/_10dp">
+
+
+            <TextView
+                android:id="@+id/tv_bd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="@android:color/transparent"
+                android:fontFamily="@font/bangla_medium"
+                android:letterSpacing="0.05"
+                android:textColor="@color/black"
+                android:text="🇧🇩  +88"
+                android:textSize="@dimen/_15sp" />
+
+            <EditText
+                android:textColor="@color/black"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/tv_bd"
+                android:background="@android:color/transparent"
+                android:fontFamily="@font/bangla_medium"
+                android:hint="017xxxxxxxx"
+                android:inputType="number"
+                android:textColorHint="@color/grey"
+                android:letterSpacing="0.05"
+                android:maxLength="15"
+                android:maxLines="1"
+                android:textSize="@dimen/_15sp" />
+
+        </com.holystock.newmyoffer.views.BorderView>
+
+        <com.holystock.newmyoffer.views.BorderView
+            android:id="@+id/nextBtn"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50dp"
+            android:layout_below="@id/ed_view"
+            android:layout_marginHorizontal="@dimen/_15dp"
+            android:layout_marginTop="@dimen/_25dp"
+            app:bgColor="@color/unselected"
+            app:borderColor="@color/greyLight"
+            app:borderWidth="@dimen/_0dp"
+            app:cornerRadius="@dimen/_100dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@android:color/transparent"
+                android:fontFamily="@font/bangla_medium"
+                android:gravity="center"
+                android:text="পরবর্তী এগিয়ে যান"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14sp" />
+
+        </com.holystock.newmyoffer.views.BorderView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nextBtn"
+            android:layout_marginTop="@dimen/_30dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/bangla_medium"
+                android:text="আপনি "
+                android:textColor="@color/black"
+                android:textSize="@dimen/_15sp" />
+
+            <TextView
+                android:id="@+id/tvTerms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/bangla_medium"
+                android:text=" নিয়ম ও শর্তসমূহ "
+                android:textColor="@color/primary"
+                android:textSize="@dimen/_15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/bangla_medium"
+                android:text="সম্মত আছেন"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_15sp" />
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:weightSum="3"
+    android:padding="4dp">
+
+    <!-- Column 1 -->
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:weightSum="4">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="4dp">
+
+            <Button
+                android:id="@+id/btn1"
+                style="@style/_keyboard"
+                android:layout_width="@dimen/_55dp"
+                android:layout_height="@dimen/_55dp"
+                android:background="@drawable/keyboard_button_ripple_effect"
+                android:text="1" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="4dp">
+
+            <Button
+                android:id="@+id/btn4"
+                style="@style/_keyboard"
+                android:layout_width="@dimen/_55dp"
+                android:layout_height="@dimen/_55dp"
+                android:background="@drawable/keyboard_button_ripple_effect"
+                android:text="4" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="4dp">
+
+            <Button
+                android:id="@+id/btn7"
+                style="@style/_keyboard"
+                android:layout_width="@dimen/_55dp"
+                android:layout_height="@dimen/_55dp"
+                android:background="@drawable/keyboard_button_ripple_effect"
+                android:text="7" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="4dp">
+
+            <ImageButton
+                android:src="@drawable/backspace_24dp"
+                android:id="@+id/btnDelete"
+                style="@style/_keyboard"
+                android:layout_width="@dimen/_55dp"
+                android:layout_height="@dimen/_55dp"
+                android:background="@drawable/keyboard_button_ripple_effect"
+                android:text="⌫" />
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <!-- Column 2 -->
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:weightSum="4">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="4dp">
+
+            <Button
+                android:id="@+id/btn2"
+                style="@style/_keyboard"
+                android:layout_width="@dimen/_55dp"
+                android:layout_height="@dimen/_55dp"
+                android:background="@drawable/keyboard_button_ripple_effect"
+                android:text="2" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="4dp">
+
+            <Button
+                android:id="@+id/btn5"
+                style="@style/_keyboard"
+                android:layout_width="@dimen/_55dp"
+                android:layout_height="@dimen/_55dp"
+                android:background="@drawable/keyboard_button_ripple_effect"
+                android:text="5" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="4dp">
+
+            <Button
+                android:id="@+id/btn8"
+                style="@style/_keyboard"
+                android:layout_width="@dimen/_55dp"
+                android:layout_height="@dimen/_55dp"
+                android:background="@drawable/keyboard_button_ripple_effect"
+                android:text="8" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="4dp">
+
+            <Button
+                android:id="@+id/btn0"
+                style="@style/_keyboard"
+                android:layout_width="@dimen/_55dp"
+                android:layout_height="@dimen/_55dp"
+                android:background="@drawable/keyboard_button_ripple_effect"
+                android:text="0" />
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <!-- Column 3 -->
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:weightSum="4">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="4dp">
+
+            <Button
+                android:id="@+id/btn3"
+                style="@style/_keyboard"
+                android:layout_width="@dimen/_55dp"
+                android:layout_height="@dimen/_55dp"
+                android:background="@drawable/keyboard_button_ripple_effect"
+                android:text="3" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="4dp">
+
+            <Button
+                android:id="@+id/btn6"
+                style="@style/_keyboard"
+                android:layout_width="@dimen/_55dp"
+                android:layout_height="@dimen/_55dp"
+                android:background="@drawable/keyboard_button_ripple_effect"
+                android:text="6" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="4dp">
+
+            <Button
+                android:id="@+id/btn9"
+                style="@style/_keyboard"
+                android:layout_width="@dimen/_55dp"
+                android:layout_height="@dimen/_55dp"
+                android:background="@drawable/keyboard_button_ripple_effect"
+                android:text="9" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="4dp">
+
+            <ImageButton
+                android:id="@+id/btnSubmit"
+                style="@style/_keyboard"
+                android:layout_width="@dimen/_55dp"
+                android:layout_height="@dimen/_55dp"
+                android:src="@drawable/keyboard_hide_26dp"
+                android:background="@drawable/keyboard_button_ripple_effect"
+                android:text="✓"
+                app:tint="@color/black" />
+
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

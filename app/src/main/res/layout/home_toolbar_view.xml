@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_95dp"
+    android:layout_alignParentTop="true"
+    android:layout_gravity="top">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_78dp"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/buttom_corner_carb"
+        android:paddingHorizontal="@dimen/_15dp"/>
+
+    <RelativeLayout
+        android:layout_marginTop="@dimen/_6dp"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:paddingHorizontal="@dimen/_15dp"
+        android:layout_height="@dimen/_50dp">
+
+        <com.holystock.newmyoffer.views.BorderView
+            android:id="@+id/profile_img"
+            android:layout_width="@dimen/_45dp"
+            android:layout_height="@dimen/_45dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            app:bgColor="@color/greyLight"
+            app:borderColor="@color/white"
+            app:borderWidth="@dimen/_1.5dp"
+            app:cornerRadius="@dimen/_100dp" />
+
+        <RelativeLayout
+            android:id="@+id/named"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10dp"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@id/menuLayout"
+            android:layout_toEndOf="@id/profile_img"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/bangla_medium"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:padding="0dp"
+                android:text="MD. Mahmudul Hasan Emon hjghjhj kjhjhghj"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_15sp" />
+
+            <TextView
+                android:id="@+id/tvPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_22dp"
+                android:fontFamily="@font/bangla_light"
+                android:includeFontPadding="false"
+                android:text="+8801775185654"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_13sp" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/menuLayout"
+            android:layout_width="@dimen/_100dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true">
+
+            <com.holystock.newmyoffer.views.BorderView
+                android:id="@+id/search_bar"
+                android:layout_width="@dimen/_40dp"
+                android:layout_height="@dimen/_40dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_10dp"
+                app:bgColor="#59FFFFFF"
+                app:borderColor="@color/white"
+                app:borderWidth="@dimen/_0dp"
+                app:cornerRadius="@dimen/_100dp" >
+
+
+                <ImageView
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/menu_24dp"
+                    android:layout_width="@dimen/_20dp"
+                    android:layout_height="@dimen/_20dp"
+                    app:tint="@color/white" />
+
+
+            </com.holystock.newmyoffer.views.BorderView>
+
+            <com.holystock.newmyoffer.views.BorderView
+                android:id="@+id/menu_bar"
+                android:layout_width="@dimen/_40dp"
+                android:layout_height="@dimen/_40dp"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@id/search_bar"
+                app:bgColor="#59FFFFFF"
+                app:borderColor="@color/white"
+                app:borderWidth="@dimen/_0dp"
+                app:cornerRadius="@dimen/_100dp">
+
+
+                <ImageView
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/search_24dp"
+                    android:layout_width="@dimen/_20dp"
+                    android:layout_height="@dimen/_20dp"
+                    app:tint="@color/white" />
+
+
+            </com.holystock.newmyoffer.views.BorderView>
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="@dimen/_165dp"
+        android:layout_height="@dimen/_30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/_6dp"
+        android:background="@android:color/transparent"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="@dimen/_100dp"
+        app:cardElevation="@dimen/_6dp"
+        app:strokeWidth="0dp" >
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_margin="@dimen/_2dp"
+            android:layout_height="match_parent">
+
+            <com.holystock.newmyoffer.views.BorderView
+                android:layout_width="@dimen/_27dp"
+                app:cornerRadius="@dimen/_100dp"
+                app:bgColor="@color/primary"
+                app:borderWidth="@dimen/_0dp"
+                android:layout_height="@dimen/_27dp">
+
+
+            </com.holystock.newmyoffer.views.BorderView>
+
+
+        </RelativeLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+</RelativeLayout>

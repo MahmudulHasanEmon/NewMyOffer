@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".activity.home.page.HomePage">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include layout="@layout/home_toolbar_view" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/_5dp"
+                android:paddingTop="@dimen/_15dp">
+
+                <com.holystock.newmyoffer.views.ExpandableHeightGridView
+                    android:id="@+id/gridView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:numColumns="4"
+                    android:scrollbars="none"
+                    android:verticalSpacing="@dimen/_15dp"
+                    tools:listitem="@layout/home_grid_item" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_100dp"
+                    android:layout_marginHorizontal="@dimen/_5dp"
+                    android:layout_marginTop="@dimen/_15dp"
+                    app:cardCornerRadius="@dimen/_10dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/islamic_background" />
+
+                </androidx.cardview.widget.CardView>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_10dp"
+                    android:layout_marginTop="@dimen/_15dp"
+                    android:layout_marginBottom="@dimen/_5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:fontFamily="@font/bangla_medium"
+                        android:text="আকর্ষণীয় অফার"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_13sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:fontFamily="@font/bangla_bold"
+                        android:text="সব দেখুন"
+                        android:textColor="@color/primary"
+                        android:textSize="@dimen/_13sp" />
+
+                </RelativeLayout>
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/specialRecyclerView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_5dp"
+                    tools:listitem="@layout/special_offer_card" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_10dp"
+                    android:layout_marginTop="@dimen/_15dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:fontFamily="@font/bangla_medium"
+                        android:text="সাম্প্রতিক লেনদেন"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_13sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:fontFamily="@font/bangla_bold"
+                        android:text="সব দেখুন"
+                        android:textColor="@color/primary"
+                        android:textSize="@dimen/_13sp" />
+
+                </RelativeLayout>
+
+                <com.holystock.newmyoffer.views.ExpandableHeightGridView
+                    android:id="@+id/trxGridView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:numColumns="1"
+                    android:scrollbars="none"
+                    tools:listitem="@layout/transaction_item" />
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

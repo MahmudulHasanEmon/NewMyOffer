@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="primary">#249728</color>
+    <color name="primaryLight">#D4F2D4</color>
+    <color name="primaryDark">#249728</color>
+    <color name="statusBar">@color/primary</color>
+
+    <color name="grey">#808080</color>
+    <color name="greyLight">#D3D3D3</color>
+
+    <color name="selectedLight">@color/primaryLight</color>
+    <color name="selectedDark">@color/primary</color>
+    <color name="unselected">#E8E8E8</color>
+
+</resources>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/statusBar"
+    tools:context=".activity.login_or_signup.PinActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:id="@+id/v1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/_15dp">
+
+            <ImageView
+                android:layout_width="@dimen/_250dp"
+                android:layout_height="200dp"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="@dimen/_20dp"
+                android:layout_marginVertical="@dimen/_5dp"
+                android:src="@drawable/login_pin_bg" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_10dp"
+                android:fontFamily="@font/bangla_bold"
+                android:lineSpacingMultiplier="0.8"
+                android:text="আপনার প্যানেল একাউন্টে \nলগইন করুন"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_19sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_20dp"
+                android:fontFamily="@font/bangla"
+                android:lineSpacingMultiplier="0.8"
+                android:text="একাউন্ট নাম্বার \n+8801775185654"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_0.5dp"
+                android:layout_marginTop="@dimen/_5dp"
+                android:background="@color/greyLight" />
+
+            <TextView
+                android:id="@+id/tvDisplay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginHorizontal="@dimen/_5dp"
+                android:layout_marginTop="@dimen/_10dp"
+                android:drawableEnd="@drawable/keyboard_hide_24dp"
+                android:fontFamily="@font/bangla_bold"
+                android:lineSpacingMultiplier="0.8"
+                android:text="পিন লিখুন "
+                android:textColor="@color/grey"
+                android:textSize="@dimen/_15sp" />
+
+        </LinearLayout>
+
+        <com.holystock.newmyoffer.views.BottomNextButtonView
+            android:id="@+id/bottomNextButton"
+            android:layout_above="@id/keyboardRootLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <RelativeLayout
+            android:id="@+id/keyboardRootLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
