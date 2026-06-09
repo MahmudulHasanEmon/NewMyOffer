@@ -1,5 +1,6 @@
 package com.holystock.newmyoffer.activity.home.page;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.holystock.newmyoffer.R;
+import com.holystock.newmyoffer.activity.service.recharge.RechargeNumberActivity;
 import com.holystock.newmyoffer.utils.HorizontalSpaceItemDecoration;
 import com.holystock.newmyoffer.views.ExpandableHeightGridView;
 
@@ -182,6 +184,10 @@ public class HomePage extends Fragment {
             holder.icon.setImageResource(
                     (Integer) item.get("icon")
             );
+
+            holder.icon.setOnClickListener(v -> {
+                startActivity(new Intent(getContext(), RechargeNumberActivity.class));
+            });
 
             return convertView;
         }

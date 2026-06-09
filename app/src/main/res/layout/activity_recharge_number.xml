@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/statusBar"
+    tools:context=".activity.service.recharge.RechargeNumberActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/primary"
+            android:backgroundTint="@color/primary"
+            app:navigationIcon="@drawable/outline_arrow_back_24"
+            app:navigationIconTint="@color/white"
+            app:title="মোবাইল রিচার্জ"
+            app:titleTextAppearance="@style/ToolbarTitleStyle" />
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_90dp"
+            android:backgroundTint="@color/white">
+
+            <com.holystock.newmyoffer.views.BorderView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:layout_marginHorizontal="@dimen/_15dp"
+                app:bgColor="@color/beautifulWhite"
+                app:borderColor="@color/greyLight"
+                app:borderWidth="@dimen/_1.5dp"
+                app:cornerRadius="@dimen/_5dp">
+
+                <EditText
+                    android:id="@+id/search_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:background="@android:color/transparent"
+                    android:drawableStart="@drawable/ic_search"
+                    android:drawablePadding="8dp"
+                    android:drawableTint="@color/grey"
+                    android:fontFamily="@font/bangla"
+                    android:hint="নাম বা নাম্বার দিন"
+                    android:imeOptions="actionDone"
+                    android:inputType="textNoSuggestions"
+                    android:maxLength="48"
+                    android:maxLines="1"
+                    android:paddingHorizontal="@dimen/_10dp"
+                    android:paddingVertical="@dimen/_12dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/grey"
+                    android:textSize="@dimen/_15sp" />
+
+
+            </com.holystock.newmyoffer.views.BorderView>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/item_recharge_number" />
+
+        <include
+            android:id="@+id/noContactLayout"
+            layout="@layout/no_contact_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

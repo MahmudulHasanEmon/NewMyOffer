@@ -12,7 +12,7 @@ import com.holystock.newmyoffer.activity.BaseActivity;
 import com.holystock.newmyoffer.activity.home.page.ChatPage;
 import com.holystock.newmyoffer.activity.home.page.HomePage;
 import com.holystock.newmyoffer.activity.home.page.InboxPage;
-import com.holystock.newmyoffer.controllers.BottomNavController;
+import com.holystock.newmyoffer.controller.BottomNavController;
 import com.holystock.newmyoffer.utils.appThemes.Status;
 
 import eightbitlab.com.blurview.BlurAlgorithm;

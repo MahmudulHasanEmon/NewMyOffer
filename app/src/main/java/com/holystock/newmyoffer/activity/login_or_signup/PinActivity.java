@@ -3,10 +3,11 @@ package com.holystock.newmyoffer.activity.login_or_signup;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.holystock.newmyoffer.MainActivity;
 import com.holystock.newmyoffer.R;
 import com.holystock.newmyoffer.activity.BaseActivity;
 import com.holystock.newmyoffer.activity.home.HomeActivity;
-import com.holystock.newmyoffer.controllers.KeyboardController;
+import com.holystock.newmyoffer.controller.KeyboardController;
 import com.holystock.newmyoffer.utils.appThemes.Status;
 import com.holystock.newmyoffer.views.BottomNextButtonView;
 
@@ -30,7 +31,7 @@ public class PinActivity extends BaseActivity {
                 }, null
         ).showKeyboard();
 
-        buttonView.setOnClickListener(v -> startActivity(new Intent(PinActivity.this, HomeActivity.class)));
+        buttonView.setOnClickListener(v -> startActivity(new Intent(PinActivity.this, MainActivity.class)));
 
 
     }

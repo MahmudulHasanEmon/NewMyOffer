@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="64dp">
+
+    <RelativeLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_ripple_primary2"
+        android:clickable="true"
+        android:focusable="true"
+        android:minHeight="64dp"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="10dp">
+
+        <ImageView
+            android:id="@+id/ivPhoto"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_centerVertical="true"
+            android:scaleType="centerCrop" />
+
+        <com.holystock.newmyoffer.views.BorderView
+            android:id="@+id/photoLayout"
+            app:cornerRadius="1000dp"
+            app:borderWidth="@dimen/_0dp"
+            android:layout_width="48dp"
+            app:bgColor="@color/beautifulWhite"
+            android:layout_height="48dp"
+            android:layout_centerVertical="true"
+            android:scaleType="centerCrop">
+
+            <TextView
+                android:id="@+id/tvLetter"
+                android:text="A"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_22sp"
+                android:fontFamily="@font/bangla_medium"
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </com.holystock.newmyoffer.views.BorderView>
+
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/ivPhoto"
+            android:layout_marginStart="12dp"
+            android:layout_toEndOf="@id/ivPhoto"
+            android:fontFamily="@font/bangla_medium"
+            android:includeFontPadding="false"
+            android:text="Contact Name"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_15sp" />
+
+        <TextView
+            android:id="@+id/tvNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvName"
+            android:layout_marginStart="12dp"
+            android:layout_toEndOf="@id/ivPhoto"
+            android:fontFamily="@font/bangla"
+            android:includeFontPadding="false"
+            android:text="01712345678"
+            android:textColor="#4A4A4A"
+            android:textSize="@dimen/_14sp" />
+
+        <ImageView
+            android:id="@+id/arrow_down"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:visibility="gone"
+            android:src="@drawable/keyboard_arrow_down_24dp"
+            app:tint="@color/grey" />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/numberContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mainLayout"
+        android:orientation="vertical"
+        android:layout_marginStart="@dimen/_60dp"/>
+
+
+</RelativeLayout>

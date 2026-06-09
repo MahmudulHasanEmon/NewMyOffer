@@ -8,10 +8,10 @@
     android:orientation="vertical">
 
     <com.holystock.newmyoffer.views.BorderView
-        android:layout_width="@dimen/_47dp"
-        android:layout_height="@dimen/_47dp"
+        android:layout_width="@dimen/_50dp"
+        android:layout_height="@dimen/_50dp"
         android:layout_centerInParent="true"
-        android:padding="@dimen/_7dp"
+        android:padding="@dimen/_8dp"
         app:bgColor="#59dddddd"
         app:borderColor="@color/white"
         app:borderWidth="@dimen/_0dp"

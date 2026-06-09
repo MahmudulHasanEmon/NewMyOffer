@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:gravity="top">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_50dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvNoTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/bangla_medium"
+            android:text="আপনি যে কন্ট্যাক্ট খুঁজছেন, তা পাওয়া যায়নি"
+            android:textColor="#313131"
+            android:textSize="@dimen/_15sp" />
+
+        <com.holystock.newmyoffer.views.BorderView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_20dp"
+            android:paddingHorizontal="@dimen/_20dp"
+            android:paddingVertical="@dimen/_10dp"
+            app:bgColor="@color/primary"
+            app:borderWidth="@dimen/_0dp"
+            app:cornerRadius="@dimen/_5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/bangla_medium"
+                android:text="পরের ধাপে যেতে ট্যাপ করুন"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14sp" />
+
+
+        </com.holystock.newmyoffer.views.BorderView>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

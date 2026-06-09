@@ -1,4 +1,4 @@
-package com.holystock.newmyoffer.controllers;
+package com.holystock.newmyoffer.controller;
 
 import android.content.Context;
 import android.view.LayoutInflater;
