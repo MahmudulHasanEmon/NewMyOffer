@@ -23,8 +23,8 @@ public class WelcomeActivity extends BaseActivity {
         setContentView(R.layout.activity_welcome);
 
         new Handler().postDelayed(() -> {
-            //Intent intent = new Intent(this, com.holystock.newmyoffer.activity.login_or_signup.LoginActivity.class);
-            Intent intent = new Intent(this, RechargeNumberActivity.class);
+            Intent intent = new Intent(this, com.holystock.newmyoffer.activity.login_or_signup.LoginActivity.class);
+            //Intent intent = new Intent(this, RechargeNumberActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
             finish();
