@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/noContactLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
@@ -24,12 +25,14 @@
             android:textSize="@dimen/_15sp" />
 
         <com.holystock.newmyoffer.views.BorderView
+            android:id="@+id/nextBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="@dimen/_20dp"
             android:paddingHorizontal="@dimen/_20dp"
             android:paddingVertical="@dimen/_10dp"
+            android:visibility="gone"
             app:bgColor="@color/primary"
             app:borderWidth="@dimen/_0dp"
             app:cornerRadius="@dimen/_5dp">

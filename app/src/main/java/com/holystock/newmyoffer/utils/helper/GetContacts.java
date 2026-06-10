@@ -9,7 +9,6 @@ import com.holystock.newmyoffer.model.Contact;
 
 import java.text.Collator;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.Locale;
@@ -269,7 +268,7 @@ public class GetContacts {
         return phone;
     }
 
-    private static boolean isBangladeshiMobile(String phone) {
+    public static boolean isBangladeshiMobile(String phone) {
 
         return phone.matches("^01[3-9]\\d{8}$");
     }

@@ -1,306 +1,8 @@
 package com.holystock.newmyoffer.adapter;
-/*
-
-import static android.view.View.GONE;
-import static android.view.View.VISIBLE;
-
-import android.content.Context;
-import android.graphics.Color;
-import android.graphics.Typeface;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import androidx.annotation.NonNull;
-import androidx.core.content.res.ResourcesCompat;
-import androidx.recyclerview.widget.RecyclerView;
-
-import com.bumptech.glide.Glide;
-import com.holystock.newmyoffer.R;
-import com.holystock.newmyoffer.model.Contact;
-
-import java.util.ArrayList;
-
-public class RechargeNumberAdapter
-        extends RecyclerView.Adapter<RechargeNumberAdapter.RechargeNumberHolder> {
-
-    private final Context context;
-    private final ArrayList<Contact> contacts;
-
-    public RechargeNumberAdapter(
-            Context context,
-            ArrayList<Contact> contacts
-    ) {
-        this.context = context;
-        this.contacts = new ArrayList<>(contacts);
-    }
-
-    @NonNull
-    @Override
-    public RechargeNumberHolder onCreateViewHolder(
-            @NonNull ViewGroup parent,
-            int viewType
-    ) {
-
-        View view = LayoutInflater.from(parent.getContext())
-                .inflate(
-                        R.layout.item_recharge_number,
-                        parent,
-                        false
-                );
-
-        return new RechargeNumberHolder(view);
-    }
-
-    @Override
-    public void onBindViewHolder(
-            @NonNull RechargeNumberHolder holder,
-            int position
-    ) {
-
-        Contact contact = contacts.get(position);
-
-        holder.tvName.setText(contact.getName());
-
-        if (contact.getPhones() != null
-                && !contact.getPhones().isEmpty()) {
-
-            if (contact.getPhones().size() == 1) {
-
-                holder.tvNumber.setText(
-                        contact.getPhones().get(0)
-                );
-
-                holder.arrow.setVisibility(GONE);
-
-            } else {
-
-                holder.tvNumber.setText(
-                        contact.getPhones().size() + " টি সেভ করা নাম্বার"
-                );
-
-                holder.arrow.setVisibility(VISIBLE);
-                bindPhoneNumbers(
-                        holder.numberContainer,
-                        contact.getPhones()
-                );
-
-            }
-        }
-
-        String image = contact.getImage();
-
-        if (image != null && !image.isEmpty()) {
-
-            Glide.with(context)
-                    .load(image)
-                    .circleCrop()
-                    .placeholder(R.drawable.bank_transfer)
-                    .into(holder.ivPhoto);
-
-        } else {
-
-            holder.ivPhoto.setImageResource(
-                    R.drawable.bank_transfer
-            );
-        }
-    }
-
-    @Override
-    public int getItemCount() {
-        return contacts.size();
-    }
-
-    public void setData(
-            ArrayList<Contact> newContacts
-    ) {
-
-        contacts.clear();
-        contacts.addAll(newContacts);
-
-        notifyDataSetChanged();
-    }
-
-    public Contact getItem(int position) {
-
-        if (position < 0 || position >= contacts.size()) {
-            return null;
-        }
-
-        return contacts.get(position);
-    }
-
-    class RechargeNumberHolder
-            extends RecyclerView.ViewHolder {
-
-        ImageView ivPhoto, arrow;
-        TextView tvName;
-        TextView tvNumber;
-
-        LinearLayout numberContainer;
-
-        RelativeLayout mainLayout;
-
-        public RechargeNumberHolder(
-                @NonNull View itemView
-        ) {
-            super(itemView);
-
-            ivPhoto =
-                    itemView.findViewById(R.id.ivPhoto);
-
-            arrow =
-                    itemView.findViewById(R.id.arrow_down);
-
-            tvName =
-                    itemView.findViewById(R.id.tvName);
-
-            tvNumber =
-                    itemView.findViewById(R.id.tvNumber);
-
-            numberContainer =
-                    itemView.findViewById(R.id.numberContainer);
-            mainLayout =
-                    itemView.findViewById(R.id.mainLayout);
-
-            mainLayout.setOnClickListener(v -> {
-
-                int position =
-                        getBindingAdapterPosition();
-
-                if (position == RecyclerView.NO_POSITION) {
-                    return;
-                }
-
-                Contact contact =
-                        contacts.get(position);
-
-                // click event
-                if (contact.getPhones().size() != 1) {
-
-                    if (numberContainer.getVisibility() == VISIBLE) {
-                        collapse(numberContainer);
-                        arrow.setImageResource(R.drawable.keyboard_arrow_up_24dp);
-                        arrow.setImageTintList(context.getColorStateList(R.color.primary));
-
-                    } else {
-                        expand(numberContainer);
-                        arrow.setImageResource(R.drawable.keyboard_arrow_down_24dp);
-                    }
-                }
-
-
-
-            });
-        }
-    }
-
-
-    private void bindPhoneNumbers(
-            LinearLayout container,
-            ArrayList<String> phones
-    ) {
-
-        container.removeAllViews();
-
-        if (phones == null || phones.isEmpty()) return;
-
-        Context context = container.getContext();
-
-        int paddingLeft = (int) (30 * context.getResources().getDisplayMetrics().density);
-        int paddingTopBottom = (int) (8 * context.getResources().getDisplayMetrics().density);
-
-        Typeface typeface =
-                ResourcesCompat.getFont(context, R.font.bangla_medium);
-
-
-        for (String phone : phones) {
-
-            TextView textView = new TextView(context);
-
-            textView.setText(phone);
-
-            // ✅ correct text size (sp)
-            textView.setTextSize(14);
-
-            // ✅ FONT FAMILY SET
-            textView.setTypeface(typeface);
-
-            textView.setClickable(true);
-            textView.setFocusable(true);
-            textView.setBackground(context.getDrawable(R.drawable.bg_ripple_primary));
-
-            // ✅ correct color
-            textView.setTextColor(Color.parseColor("#757575"));
-
-            textView.setIncludeFontPadding(false);
-
-            textView.setPadding(
-                    50,
-                    paddingTopBottom,
-                    paddingLeft,
-                    paddingTopBottom
-            );
-
-            textView.setOnClickListener(v -> {
-
-                android.content.ClipboardManager clipboard =
-                        (android.content.ClipboardManager)
-                                context.getSystemService(Context.CLIPBOARD_SERVICE);
-
-                android.content.ClipData clip =
-                        android.content.ClipData.newPlainText("number", phone);
-
-                clipboard.setPrimaryClip(clip);
-
-                Toast.makeText(
-                        context,
-                        "Copied: " + phone,
-                        Toast.LENGTH_SHORT
-                ).show();
-            });
-
-            container.addView(textView);
-        }
-    }
-
-    private void collapse(View view) {
-
-        view.animate()
-                .alpha(0f)
-                .scaleY(0f)
-                .setDuration(200)
-                .withEndAction(() ->
-                        view.setVisibility(GONE)
-                )
-                .start();
-    }
-
-    private void expand(View view) {
-
-        view.setVisibility(VISIBLE);
-
-        view.setAlpha(0f);
-        view.setScaleY(0f);
-
-        view.animate()
-                .alpha(1f)
-                .scaleY(1f)
-                .setDuration(200)
-                .start();
-    }
-}
-*/
 
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
-import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.view.LayoutInflater;
@@ -355,6 +57,18 @@ public class RechargeNumberAdapter
         this.contacts = new ArrayList<>(contacts);
     }
 
+    public interface OnItemClickListener {
+        void onItemClick(String phone, Contact contact);
+    }
+
+    private OnItemClickListener listener;
+
+    public void setOnItemClickListener(
+            OnItemClickListener listener
+    ) {
+        this.listener = listener;
+    }
+
     @NonNull
     @Override
     public RechargeNumberHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -388,7 +102,7 @@ public class RechargeNumberAdapter
             holder.tvNumber.setText(phones.size() + " টি সেভ করা নাম্বার");
             holder.arrow.setVisibility(View.VISIBLE);
 
-            bindPhoneNumbers(holder.numberContainer, phones);
+            bindPhoneNumbers(holder.numberContainer, contact);
 
             boolean expanded = expandedPositions.contains(position);
 
@@ -487,7 +201,10 @@ public class RechargeNumberAdapter
 
                 Contact contact = contacts.get(position);
 
-                if (contact.getPhones() == null || contact.getPhones().size() <= 1) {
+                if (contact.getPhones().size() == 1) {
+                    if (listener != null) {
+                        listener.onItemClick(contact.getPhones().get(0), contact);
+                    }
                     return;
                 }
 
@@ -502,17 +219,18 @@ public class RechargeNumberAdapter
                     expand(numberContainer);
                     arrow.setImageResource(R.drawable.keyboard_arrow_up_24dp);
                 }
+
             });
         }
     }
 
-    private void bindPhoneNumbers(LinearLayout container, ArrayList<String> phones) {
+    private void bindPhoneNumbers(LinearLayout container, Contact contact) {
 
         container.removeAllViews();
-        if (phones == null) return;
+        if (contact.getPhones() == null) return;
 
         // Sort phone numbers ascending (0 → 9)
-        ArrayList<String> sortedPhones = new ArrayList<>(phones);
+        ArrayList<String> sortedPhones = new ArrayList<>(contact.getPhones());
 
         sortedPhones.sort((p1, p2) -> {
             String n1 = p1.replaceAll("[^0-9]", "");
@@ -554,7 +272,7 @@ public class RechargeNumberAdapter
             );
 
             textView.setText(phone);
-            textView.setTextSize(16);
+            textView.setTextSize(15);
             textView.setTypeface(typeface);
             textView.setTextColor(Color.parseColor("#4A4A4A"));
             textView.setIncludeFontPadding(false);
@@ -567,7 +285,12 @@ public class RechargeNumberAdapter
                     paddingTopBottom
             );
 
-            textView.setOnClickListener(v -> copyToClipboard(phone));
+            textView.setOnClickListener(v -> {
+                if (listener != null) {
+                    listener.onItemClick(phone, contact);
+                }
+            });
+
 
             textView.setLayoutParams(paramsTv);
             container.addView(textView);
@@ -601,16 +324,6 @@ public class RechargeNumberAdapter
 
     }
 
-    private void copyToClipboard(String phone) {
-        ClipboardManager clipboard =
-                (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
-
-        ClipData clip = ClipData.newPlainText("number", phone);
-        clipboard.setPrimaryClip(clip);
-
-        Toast.makeText(context, "Copied: " + phone, Toast.LENGTH_SHORT).show();
-    }
-
     private void expand(View view) {
         view.setVisibility(View.VISIBLE);
         view.setAlpha(0f);
@@ -642,5 +355,6 @@ public class RechargeNumberAdapter
                         .getDisplayMetrics().density
         );
     }
+
 
 }

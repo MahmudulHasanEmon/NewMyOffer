@@ -78,11 +78,7 @@
             tools:listitem="@layout/item_recharge_number" />
 
         <include
-            android:id="@+id/noContactLayout"
-            layout="@layout/no_contact_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="gone" />
+            layout="@layout/no_contact_view" />
 
     </LinearLayout>
 

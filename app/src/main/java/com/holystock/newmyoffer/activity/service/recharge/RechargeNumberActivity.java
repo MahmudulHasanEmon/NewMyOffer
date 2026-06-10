@@ -1,36 +1,48 @@
 package com.holystock.newmyoffer.activity.service.recharge;
 
-
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.holystock.newmyoffer.R;
 import com.holystock.newmyoffer.activity.BaseActivity;
 import com.holystock.newmyoffer.adapter.RechargeNumberAdapter;
+import com.holystock.newmyoffer.controller.RichTextBuilder;
 import com.holystock.newmyoffer.model.Contact;
+import com.holystock.newmyoffer.model.TextSegment;
 import com.holystock.newmyoffer.utils.appThemes.AppToolbarManager;
 import com.holystock.newmyoffer.utils.appThemes.Status;
 import com.holystock.newmyoffer.utils.helper.GetContacts;
+import com.holystock.newmyoffer.views.BorderView;
 
 import java.util.ArrayList;
 
 public class RechargeNumberActivity extends BaseActivity {
     private static final int REQUEST_CODE_READ_CONTACTS = 1;
-    private ArrayList<Contact> contacts = new ArrayList<>();
-
+    private RecyclerView recyclerView;
+    private EditText searchBar;
     private RelativeLayout noContactLayout;
+    private BorderView nextBtn;
+    private TextView tvNoTitle;
+    private RechargeNumberAdapter numberAdapter;
+    private ArrayList<Contact> contacts = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,23 +52,38 @@ public class RechargeNumberActivity extends BaseActivity {
         new Status(this).setLightStatusBar();
         new AppToolbarManager(this).init();
 
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_CONTACTS)
-                != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_CONTACTS},
-                    REQUEST_CODE_READ_CONTACTS);
-        } else {
+        initViews();
+        setupRecyclerView();
+        setupSearch();
 
-            contacts = GetContacts.getContacts(getApplicationContext());
-            Log.d("GetContacts", GetContacts.findContactByNumber(contacts, "01845416702").getName());
+        checkContactPermission();
+    }
 
-        }
+    private void initViews() {
 
-        RechargeNumberAdapter numberAdapter = new RechargeNumberAdapter(
-                getApplicationContext(),
-                contacts
-        );
+        recyclerView =
+                findViewById(R.id.recyclerView);
 
-        RecyclerView recyclerView = findViewById(R.id.recyclerView);
+        searchBar =
+                findViewById(R.id.search_bar);
+
+        noContactLayout =
+                findViewById(R.id.noContactLayout);
+
+        nextBtn =
+                findViewById(R.id.nextBtn);
+
+        tvNoTitle =
+                findViewById(R.id.tvNoTitle);
+    }
+
+    private void setupRecyclerView() {
+
+        numberAdapter =
+                new RechargeNumberAdapter(
+                        this,
+                        new ArrayList<>()
+                );
 
         recyclerView.setLayoutManager(
                 new LinearLayoutManager(this)
@@ -64,41 +91,185 @@ public class RechargeNumberActivity extends BaseActivity {
 
         recyclerView.setAdapter(numberAdapter);
 
-        EditText search_bar = findViewById(R.id.search_bar);
-        noContactLayout = findViewById(R.id.noContactLayout);
-
-        search_bar.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-                ArrayList<Contact> list =
-                        GetContacts.filterContacts(contacts, s.toString());
-
-                if (!list.isEmpty()) {
-
-                    recyclerView.setVisibility(View.VISIBLE);
-                    noContactLayout.setVisibility(View.GONE);
-
-                    numberAdapter.setData(list);
-
-                } else {
-                    recyclerView.setVisibility(View.GONE);
-                    noContactLayout.setVisibility(View.VISIBLE);
-                }
-            }
-        });
-
-
+        numberAdapter.setOnItemClickListener(
+                (phone, contact) -> request(phone)
+        );
     }
 
+    private void checkContactPermission() {
+
+        if (ContextCompat.checkSelfPermission(
+                this,
+                Manifest.permission.READ_CONTACTS
+        ) == PackageManager.PERMISSION_GRANTED) {
+
+            loadContacts();
+
+        } else {
+
+            ActivityCompat.requestPermissions(
+                    this,
+                    new String[]{
+                            Manifest.permission.READ_CONTACTS
+                    },
+                    REQUEST_CODE_READ_CONTACTS
+            );
+        }
+    }
+
+    private void loadContacts() {
+
+        contacts = GetContacts.getContacts(this);
+
+        numberAdapter.setData(contacts);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(
+            int requestCode,
+            @NonNull String[] permissions,
+            @NonNull int[] grantResults
+    ) {
+
+        super.onRequestPermissionsResult(
+                requestCode,
+                permissions,
+                grantResults
+        );
+
+        if (requestCode == REQUEST_CODE_READ_CONTACTS
+                && grantResults.length > 0
+                && grantResults[0]
+                == PackageManager.PERMISSION_GRANTED) {
+
+            loadContacts();
+
+        } else {
+
+            Toast.makeText(
+                    this,
+                    "Contact permission denied",
+                    Toast.LENGTH_SHORT
+            ).show();
+        }
+    }
+
+    private void setupSearch() {
+
+        searchBar.addTextChangedListener(
+                new TextWatcher() {
+
+                    @Override
+                    public void beforeTextChanged(
+                            CharSequence s,
+                            int start,
+                            int count,
+                            int after
+                    ) {
+
+                    }
+
+                    @Override
+                    public void onTextChanged(
+                            CharSequence s,
+                            int start,
+                            int before,
+                            int count
+                    ) {
+
+                        filterContacts(
+                                s.toString().trim()
+                        );
+                    }
+
+                    @Override
+                    public void afterTextChanged(
+                            Editable s
+                    ) {
+
+                    }
+                }
+        );
+    }
+
+    private void filterContacts(
+            String keyword
+    ) {
+
+        ArrayList<Contact> list =
+                GetContacts.filterContacts(
+                        contacts,
+                        keyword
+                );
+
+        numberAdapter.setData(list);
+
+        boolean hasData =
+                list != null
+                        && !list.isEmpty();
+
+        recyclerView.setVisibility(
+                hasData
+                        ? View.VISIBLE
+                        : View.GONE
+        );
+
+        noContactLayout.setVisibility(
+                hasData
+                        ? View.GONE
+                        : View.VISIBLE
+        );
+
+        if (!hasData) {
+
+            validate(keyword);
+
+        } else {
+
+            nextBtn.setVisibility(View.GONE);
+        }
+    }
+
+    @SuppressLint("SetTextI18n")
+    private void validate(
+            String number
+    ) {
+
+        ArrayList<TextSegment> list = new ArrayList<>();
+
+        if (!GetContacts.isBangladeshiMobile(number)) {
+
+            nextBtn.setVisibility(View.GONE);
+
+            list.clear();
+            list.add(new TextSegment("আপনি যে কন্ট্যাক্ট খুঁজছেন, তা পাওয়া যায়নি").setTextColor(Color.GRAY));
+
+            RichTextBuilder.apply(tvNoTitle, list);
+
+            return;
+        }
+
+        nextBtn.setVisibility(View.VISIBLE);
+
+        list.clear();
+        list.add(new TextSegment(number).setTextColor(Color.BLACK).setTextSize(16));
+        list.add(new TextSegment(" -নাম্বারে মোবাইল রিচার্জ করুন").setTextColor(Color.GRAY));
+
+        RichTextBuilder.apply(tvNoTitle, list);
+
+
+        nextBtn.setOnClickListener(
+                v -> request(number)
+        );
+    }
+
+    private void request(
+            String phone
+    ) {
+        Toast.makeText(
+                this,
+                phone,
+                Toast.LENGTH_SHORT
+        ).show();
+    }
 }
