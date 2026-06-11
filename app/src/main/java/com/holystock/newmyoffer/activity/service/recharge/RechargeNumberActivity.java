@@ -258,10 +258,10 @@ public class RechargeNumberActivity extends BaseActivity {
 
         RichTextBuilder.apply(tvNoTitle, list);
 
-
         nextBtn.setOnClickListener(
                 v -> request(number, number)
         );
+
     }
 
     private void request(
