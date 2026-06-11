@@ -5,7 +5,6 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -18,11 +17,9 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.holystock.newmyoffer.R;
 import com.holystock.newmyoffer.activity.BaseActivity;
 import com.holystock.newmyoffer.adapter.RechargeNumberAdapter;
@@ -30,16 +27,13 @@ import com.holystock.newmyoffer.controller.RechargeSheetController;
 import com.holystock.newmyoffer.controller.RichTextBuilder;
 import com.holystock.newmyoffer.model.Contact;
 import com.holystock.newmyoffer.model.TextSegment;
-import com.holystock.newmyoffer.utils.Controller;
+import com.holystock.newmyoffer.utils.Helper;
 import com.holystock.newmyoffer.utils.appThemes.AppToolbarManager;
 import com.holystock.newmyoffer.utils.appThemes.Status;
 import com.holystock.newmyoffer.utils.helper.GetContacts;
 import com.holystock.newmyoffer.views.BorderView;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 public class RechargeNumberActivity extends BaseActivity {
     private static final int REQUEST_CODE_READ_CONTACTS = 1;
@@ -275,7 +269,7 @@ public class RechargeNumberActivity extends BaseActivity {
             String name
     ) {
 
-        Controller.hideKeyboard(this);
+        Helper.hideKeyboard(this);
 
         new RechargeSheetController(this)
                 .addItem("Airtel", R.drawable.airtel)
