@@ -63,6 +63,7 @@ public class BorderView extends RelativeLayout {
             ta.recycle();
         }
 
+
         drawable = new GradientDrawable();
         drawable.setShape(GradientDrawable.RECTANGLE);
         drawable.setColor(bgColor);

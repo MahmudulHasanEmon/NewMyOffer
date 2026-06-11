@@ -2,6 +2,7 @@ package com.holystock.newmyoffer.activity.service.recharge;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -21,18 +22,24 @@ import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.holystock.newmyoffer.R;
 import com.holystock.newmyoffer.activity.BaseActivity;
 import com.holystock.newmyoffer.adapter.RechargeNumberAdapter;
+import com.holystock.newmyoffer.controller.RechargeSheetController;
 import com.holystock.newmyoffer.controller.RichTextBuilder;
 import com.holystock.newmyoffer.model.Contact;
 import com.holystock.newmyoffer.model.TextSegment;
+import com.holystock.newmyoffer.utils.Controller;
 import com.holystock.newmyoffer.utils.appThemes.AppToolbarManager;
 import com.holystock.newmyoffer.utils.appThemes.Status;
 import com.holystock.newmyoffer.utils.helper.GetContacts;
 import com.holystock.newmyoffer.views.BorderView;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class RechargeNumberActivity extends BaseActivity {
     private static final int REQUEST_CODE_READ_CONTACTS = 1;
@@ -92,7 +99,7 @@ public class RechargeNumberActivity extends BaseActivity {
         recyclerView.setAdapter(numberAdapter);
 
         numberAdapter.setOnItemClickListener(
-                (phone, contact) -> request(phone)
+                (phone, contact) -> request(phone, contact.getName())
         );
     }
 
@@ -259,17 +266,37 @@ public class RechargeNumberActivity extends BaseActivity {
 
 
         nextBtn.setOnClickListener(
-                v -> request(number)
+                v -> request(number, number)
         );
     }
 
     private void request(
-            String phone
+            String phone,
+            String name
     ) {
-        Toast.makeText(
-                this,
-                phone,
-                Toast.LENGTH_SHORT
-        ).show();
+
+        Controller.hideKeyboard(this);
+
+        new RechargeSheetController(this)
+                .addItem("Airtel", R.drawable.airtel)
+                .addItem("Banglalink", R.drawable.banglalink)
+                .addItem("Grameenphone", R.drawable.grameenphone)
+                .addItem("Robi", R.drawable.robi)
+                .addItem("Ryze", R.drawable.ryze)
+                .addItem("Skitto", R.drawable.skitto)
+                .addItem("Teletalk", R.drawable.teletalk)
+                .onItemSelected((title, icon, position) -> {
+                    Intent intent = new Intent(this, RechargeOfferActivity.class);
+
+                    intent.putExtra(RechargeOfferActivity.EXTRA_NUMBER, phone);
+                    intent.putExtra(RechargeOfferActivity.EXTRA_OPERATOR, title);
+                    intent.putExtra(RechargeOfferActivity.EXTRA_NAME, name);
+                    intent.putExtra(RechargeOfferActivity.EXTRA_ICON, icon);
+
+                    startActivity(intent);
+                })
+                .show();
     }
+
+
 }

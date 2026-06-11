@@ -3,6 +3,7 @@ package com.holystock.newmyoffer.adapter;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.view.LayoutInflater;
@@ -15,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -227,6 +229,7 @@ public class RechargeNumberAdapter
     private void bindPhoneNumbers(LinearLayout container, Contact contact) {
 
         container.removeAllViews();
+
         if (contact.getPhones() == null) return;
 
         // Sort phone numbers ascending (0 → 9)
@@ -277,6 +280,12 @@ public class RechargeNumberAdapter
             textView.setTextColor(Color.parseColor("#4A4A4A"));
             textView.setIncludeFontPadding(false);
             textView.setBackground(context.getDrawable(R.drawable.bg_ripple_primary2));
+            textView.setBackgroundTintList(
+                    ColorStateList.valueOf(
+                            ContextCompat.getColor(context, R.color.beautifulWhite)
+                    )
+            );
+
 
             textView.setPadding(
                     paddingStart,

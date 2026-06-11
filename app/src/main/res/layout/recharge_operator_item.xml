@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_ripple_primary"
+    android:backgroundTint="@color/beautifulWhite"
+    android:clickable="true"
+    android:descendantFocusability="blocksDescendants"
+    android:focusable="true"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingVertical="@dimen/_10dp">
+
+    <com.holystock.newmyoffer.views.BorderView
+        android:layout_width="@dimen/_55dp"
+        android:layout_height="@dimen/_55dp"
+        android:clickable="false"
+        android:focusable="false"
+        android:padding="@dimen/_1.5dp"
+        app:bgColor="#59DDDDDD"
+        app:borderColor="@color/primaryLight"
+        app:borderWidth="@dimen/_1.5dp"
+        app:cornerRadius="@dimen/_100dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="false"
+            android:focusable="false"
+            app:cardCornerRadius="999dp"
+            app:cardElevation="0dp">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="false"
+                android:focusable="false">
+
+                <ImageView
+                    android:id="@+id/icon"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/wallet" />
+
+            </FrameLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </com.holystock.newmyoffer.views.BorderView>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_6dp"
+        android:clickable="false"
+        android:ellipsize="end"
+        android:focusable="false"
+        android:fontFamily="@font/bangla_medium"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="এড মানি"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_11sp" />
+
+</LinearLayout>

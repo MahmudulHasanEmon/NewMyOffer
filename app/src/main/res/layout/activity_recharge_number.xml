@@ -22,6 +22,7 @@
             android:layout_height="?attr/actionBarSize"
             android:background="@color/primary"
             android:backgroundTint="@color/primary"
+            app:titleCentered="true"
             app:navigationIcon="@drawable/outline_arrow_back_24"
             app:navigationIconTint="@color/white"
             app:title="মোবাইল রিচার্জ"

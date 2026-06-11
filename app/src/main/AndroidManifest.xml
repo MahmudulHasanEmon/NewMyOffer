@@ -7,7 +7,6 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
 
-
     <application
         android:name=".utils.myApplication"
         android:allowBackup="true"
@@ -44,6 +43,10 @@
         </activity>
         <activity
             android:name=".activity.service.recharge.RechargeNumberActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activity.service.recharge.RechargeOfferActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
     </application>
