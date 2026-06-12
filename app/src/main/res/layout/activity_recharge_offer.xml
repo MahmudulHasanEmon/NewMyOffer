@@ -21,19 +21,176 @@
             android:layout_height="?attr/actionBarSize"
             android:background="@color/primary"
             android:backgroundTint="@color/primary"
-            app:titleCentered="true"
             app:navigationIcon="@drawable/outline_arrow_back_24"
             app:navigationIconTint="@color/white"
             app:title="মোবাইল রিচার্জ"
+            app:titleCentered="true"
             app:titleTextAppearance="@style/ToolbarTitleStyle" />
 
-        <TextView
-            android:id="@+id/tvDisplay"
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10dp"
+            android:background="@android:color/transparent"
+            app:cardBackgroundColor="@android:color/white"
+            app:cardElevation="@dimen/_3dp"
+            app:shapeAppearanceOverlay="@style/TopRoundedCard"
+            app:strokeColor="@color/primaryLight"
+            app:strokeWidth="0dp">
+
+            <RelativeLayout
+                android:id="@+id/mainLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_ripple_primary2"
+                android:minHeight="64dp"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="10dp">
+
+                <com.holystock.newmyoffer.views.BorderView
+                    android:id="@+id/operatorLayout"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    app:bgColor="@color/white"
+                    app:borderColor="@color/primaryLight"
+                    app:borderWidth="@dimen/_1.5dp"
+                    app:cornerRadius="1000dp">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_margin="@dimen/_5dp"
+                        app:cardCornerRadius="999dp"
+                        app:cardElevation="0dp">
+
+                        <ImageView
+                            android:id="@+id/imgOperator"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/grameenphone" />
+
+                    </androidx.cardview.widget.CardView>
+
+                    <com.holystock.newmyoffer.views.BorderView
+                        android:layout_width="@dimen/_18dp"
+                        android:layout_height="@dimen/_18dp"
+                        android:layout_alignParentEnd="true"
+                        android:padding="@dimen/_3dp"
+                        app:bgColor="@color/white"
+                        app:borderColor="@color/primary"
+                        app:borderWidth="@dimen/_1dp"
+                        app:cornerRadius="@dimen/_100dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/edit" />
 
 
+                    </com.holystock.newmyoffer.views.BorderView>
+
+
+                </com.holystock.newmyoffer.views.BorderView>
+
+
+                <ImageView
+                    android:id="@+id/ivPhoto"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_centerVertical="true"
+                    android:scaleType="centerCrop" />
+
+                <com.holystock.newmyoffer.views.BorderView
+                    android:id="@+id/photoLayout"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_centerVertical="true"
+                    android:scaleType="centerCrop"
+                    app:bgColor="@color/beautifulWhite"
+                    app:borderWidth="@dimen/_0dp"
+                    app:cornerRadius="1000dp">
+
+                    <TextView
+                        android:id="@+id/tvLetter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:fontFamily="@font/bangla_medium"
+                        android:maxLength="1"
+                        android:text="A"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_22sp" />
+
+                </com.holystock.newmyoffer.views.BorderView>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12dp"
+                    android:layout_toEndOf="@id/ivPhoto"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/bangla_medium"
+                        android:includeFontPadding="false"
+                        android:maxLines="1"
+                        android:text="Contact Name"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_15sp" />
+
+                    <TextView
+                        android:id="@+id/tvNumber"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/bangla"
+                        android:includeFontPadding="false"
+                        android:text="01712345678"
+                        android:textColor="#4A4A4A"
+                        android:textSize="@dimen/_14sp" />
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10dp"
+            android:layout_marginBottom="@dimen/_5dp"
+            android:background="@android:color/transparent"
+            app:cardBackgroundColor="@android:color/white"
+            app:cardCornerRadius="0dp"
+            app:cardElevation="@dimen/_1dp"
+            app:strokeColor="@color/primaryLight"
+            app:strokeWidth="0dp">
+
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab_layout"
+                style="@style/RoundedTabLayoutStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                app:tabGravity="center"
+                app:tabMode="auto" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
     </LinearLayout>
 
 

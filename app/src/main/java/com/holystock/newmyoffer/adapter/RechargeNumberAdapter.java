@@ -23,6 +23,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.holystock.newmyoffer.R;
 import com.holystock.newmyoffer.model.Contact;
+import com.holystock.newmyoffer.utils.Helper;
 import com.holystock.newmyoffer.views.BorderView;
 
 import java.util.ArrayList;
@@ -34,22 +35,6 @@ public class RechargeNumberAdapter
 
     private final Context context;
     private final ArrayList<Contact> contacts;
-
-    private final int[] lightColors = {
-            Color.parseColor("#FFCDD2"),
-            Color.parseColor("#F8BBD0"),
-            Color.parseColor("#E1BEE7"),
-            Color.parseColor("#D1C4E9"),
-            Color.parseColor("#C5CAE9"),
-            Color.parseColor("#BBDEFB"),
-            Color.parseColor("#B3E5FC"),
-            Color.parseColor("#B2EBF2"),
-            Color.parseColor("#C8E6C9"),
-            Color.parseColor("#DCEDC8"),
-            Color.parseColor("#FFF9C4"),
-            Color.parseColor("#FFE0B2"),
-            Color.parseColor("#FFCCBC")
-    };
 
     // store expanded state (VERY IMPORTANT for RecyclerView)
     private final HashSet<Integer> expandedPositions = new HashSet<>();
@@ -125,7 +110,8 @@ public class RechargeNumberAdapter
                     .circleCrop()
                     .placeholder(R.drawable.bank_transfer)
                     .into(holder.ivPhoto);
-        } else {
+        }
+        else {
 
             String firstLetter = String.valueOf(
                     contact.getName().trim().charAt(0)
@@ -142,13 +128,14 @@ public class RechargeNumberAdapter
 
             int index = Math.abs(
                     name != null ? name.hashCode() : position
-            ) % lightColors.length;
+            ) % Helper.lightColors.length;
 
             holder.photoLayout.setBackgroundColorCustom(
-                    lightColors[index]
+                    Helper.lightColors[index]
             );
 
         }
+
     }
 
     @Override

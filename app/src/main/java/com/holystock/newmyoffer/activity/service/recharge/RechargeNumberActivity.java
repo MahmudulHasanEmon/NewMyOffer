@@ -93,7 +93,7 @@ public class RechargeNumberActivity extends BaseActivity {
         recyclerView.setAdapter(numberAdapter);
 
         numberAdapter.setOnItemClickListener(
-                (phone, contact) -> request(phone, contact.getName())
+                (phone, contact) -> request(phone, contact.getName(), contact)
         );
     }
 
@@ -259,14 +259,15 @@ public class RechargeNumberActivity extends BaseActivity {
         RichTextBuilder.apply(tvNoTitle, list);
 
         nextBtn.setOnClickListener(
-                v -> request(number, number)
+                v -> request(number, "+88"+number, null)
         );
 
     }
 
-    private void request(
+    /*private void request(
             String phone,
-            String name
+            String name,
+            Contact contact
     ) {
 
         Helper.hideKeyboard(this);
@@ -280,12 +281,112 @@ public class RechargeNumberActivity extends BaseActivity {
                 .addItem("Skitto", R.drawable.skitto)
                 .addItem("Teletalk", R.drawable.teletalk)
                 .onItemSelected((title, icon, position) -> {
+
                     Intent intent = new Intent(this, RechargeOfferActivity.class);
 
                     intent.putExtra(RechargeOfferActivity.EXTRA_NUMBER, phone);
                     intent.putExtra(RechargeOfferActivity.EXTRA_OPERATOR, title);
                     intent.putExtra(RechargeOfferActivity.EXTRA_NAME, name);
                     intent.putExtra(RechargeOfferActivity.EXTRA_ICON, icon);
+
+                    if (contact != null) {
+
+                        if (contact.getImage() != null
+                                && !contact.getImage().isEmpty()) {
+
+                            intent.putExtra(
+                                    RechargeOfferActivity.EXTRA_IMG,
+                                    contact.getImage()
+                            );
+
+                        }
+                    }
+
+                    startActivity(intent);
+                })
+                .show();
+    }*/
+
+    private void request(
+            String phone,
+            String name,
+            Contact contact
+    ) {
+
+        Helper.hideKeyboard(this);
+
+        new RechargeSheetController(this)
+                .addItem("Airtel", R.drawable.airtel)
+                .addItem("Banglalink", R.drawable.banglalink)
+                .addItem("Grameenphone", R.drawable.grameenphone)
+                .addItem("Robi", R.drawable.robi)
+                .addItem("Ryze", R.drawable.ryze)
+                .addItem("Skitto", R.drawable.skitto)
+                .addItem("Teletalk", R.drawable.teletalk)
+                .onItemSelected((title, icon, position) -> {
+
+                    Intent intent = new Intent(
+                            this,
+                            RechargeOfferActivity.class
+                    );
+
+                    intent.putExtra(
+                            RechargeOfferActivity.EXTRA_NUMBER,
+                            phone
+                    );
+
+                    intent.putExtra(
+                            RechargeOfferActivity.EXTRA_OPERATOR,
+                            title
+                    );
+
+                    intent.putExtra(
+                            RechargeOfferActivity.EXTRA_NAME,
+                            name
+                    );
+
+                    intent.putExtra(
+                            RechargeOfferActivity.EXTRA_ICON,
+                            icon
+                    );
+
+                    if (contact != null) {
+
+                        if (contact.getImage() != null
+                                && !contact.getImage().isEmpty()) {
+
+                            intent.putExtra(
+                                    RechargeOfferActivity.EXTRA_IMG,
+                                    contact.getImage()
+                            );
+
+                        } else {
+
+                            String firstLetter = "";
+
+                            if (name != null && !name.trim().isEmpty()) {
+                                firstLetter = String.valueOf(
+                                        Character.toUpperCase(
+                                                name.trim().charAt(0)
+                                        )
+                                );
+                            }
+
+                            int colorIndex = Math.abs(
+                                    (name == null ? 0 : name.hashCode())
+                            ) % Helper.lightColors.length;
+
+                            intent.putExtra(
+                                    RechargeOfferActivity.EXTRA_LETTER,
+                                    firstLetter
+                            );
+
+                            intent.putExtra(
+                                    RechargeOfferActivity.EXTRA_COLOR,
+                                    Helper.lightColors[colorIndex]
+                            );
+                        }
+                    }
 
                     startActivity(intent);
                 })
