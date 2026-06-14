@@ -10,36 +10,48 @@
 
     <declare-styleable name="IconTextView">
 
-        <attr name="itvText" format="string"/>
-        <attr name="itvTextColor" format="color"/>
-        <attr name="itvTextSize" format="dimension"/>
-        <attr name="itvFontFamily" format="reference"/>
-        <attr name="itvIcon" format="reference"/>
-        <attr name="itvIconColor" format="color"/>
+        <attr name="itvText" format="string" />
+        <attr name="itvTextColor" format="color" />
+        <attr name="itvTextSize" format="dimension" />
+        <attr name="itvFontFamily" format="reference" />
+        <attr name="itvIcon" format="reference" />
+        <attr name="itvIconColor" format="color" />
 
-        <attr name="itvIconSize" format="dimension"/>
-        <attr name="itvIconWidth" format="dimension"/>
-        <attr name="itvIconHeight" format="dimension"/>
+        <attr name="itvIconSize" format="dimension" />
+        <attr name="itvIconWidth" format="dimension" />
+        <attr name="itvIconHeight" format="dimension" />
 
-        <attr name="itvIconPaddingStart" format="dimension"/>
-        <attr name="itvIconPaddingEnd" format="dimension"/>
-        <attr name="itvIconPaddingTop" format="dimension"/>
-        <attr name="itvIconPaddingBottom" format="dimension"/>
+        <attr name="itvIconPaddingStart" format="dimension" />
+        <attr name="itvIconPaddingEnd" format="dimension" />
+        <attr name="itvIconPaddingTop" format="dimension" />
+        <attr name="itvIconPaddingBottom" format="dimension" />
 
 
         <attr name="itvIconAlignment">
-            <enum name="start" value="0"/>
-            <enum name="top" value="1"/>
-            <enum name="end" value="2"/>
-            <enum name="bottom" value="3"/>
+            <enum name="start" value="0" />
+            <enum name="top" value="1" />
+            <enum name="end" value="2" />
+            <enum name="bottom" value="3" />
         </attr>
 
     </declare-styleable>
 
 
     <declare-styleable name="CustomLayout">
-        <attr name="myCornerRadius" format="dimension"/>
-        <attr name="solidColor" format="color"/>
+        <attr name="myCornerRadius" format="dimension" />
+        <attr name="solidColor" format="color" />
     </declare-styleable>
+
+
+    <declare-styleable name="BalanceTextView">
+        <attr name="customTextColor" format="color" />
+        <attr name="customTextSize" format="dimension" />
+        <attr name="customTextStyle" format="enum">
+            <enum name="normal" value="0" />
+            <enum name="bold" value="1" />
+        </attr>
+
+    </declare-styleable>
+
 
 </resources>

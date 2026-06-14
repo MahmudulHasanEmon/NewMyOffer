@@ -5,11 +5,10 @@
     <RelativeLayout
         android:id="@+id/buttonTint"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_52dp"
+        android:layout_height="@dimen/_50dp"
         android:background="@drawable/top_corner_carb"
         android:backgroundTint="@color/unselected"
         android:clickable="false"
-        android:focusable="true"
         android:foreground="?attr/selectableItemBackground"
         android:padding="@dimen/_10dp">
 

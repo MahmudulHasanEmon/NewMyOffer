@@ -16,7 +16,6 @@ public class BottomNextButtonView extends RelativeLayout {
 
     private TextView textView;
     private RelativeLayout layout;
-    private boolean clickable;
 
     public BottomNextButtonView(Context context) {
         super(context);
@@ -39,6 +38,9 @@ public class BottomNextButtonView extends RelativeLayout {
 
         textView = findViewById(R.id.tvButtonText);
         layout = findViewById(R.id.buttonTint);
+
+
+        setClickable(false);
 
 
     }

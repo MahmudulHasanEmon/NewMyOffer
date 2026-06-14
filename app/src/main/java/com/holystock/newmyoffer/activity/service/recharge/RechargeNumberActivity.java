@@ -263,50 +263,7 @@ public class RechargeNumberActivity extends BaseActivity {
         );
 
     }
-
-    /*private void request(
-            String phone,
-            String name,
-            Contact contact
-    ) {
-
-        Helper.hideKeyboard(this);
-
-        new RechargeSheetController(this)
-                .addItem("Airtel", R.drawable.airtel)
-                .addItem("Banglalink", R.drawable.banglalink)
-                .addItem("Grameenphone", R.drawable.grameenphone)
-                .addItem("Robi", R.drawable.robi)
-                .addItem("Ryze", R.drawable.ryze)
-                .addItem("Skitto", R.drawable.skitto)
-                .addItem("Teletalk", R.drawable.teletalk)
-                .onItemSelected((title, icon, position) -> {
-
-                    Intent intent = new Intent(this, RechargeOfferActivity.class);
-
-                    intent.putExtra(RechargeOfferActivity.EXTRA_NUMBER, phone);
-                    intent.putExtra(RechargeOfferActivity.EXTRA_OPERATOR, title);
-                    intent.putExtra(RechargeOfferActivity.EXTRA_NAME, name);
-                    intent.putExtra(RechargeOfferActivity.EXTRA_ICON, icon);
-
-                    if (contact != null) {
-
-                        if (contact.getImage() != null
-                                && !contact.getImage().isEmpty()) {
-
-                            intent.putExtra(
-                                    RechargeOfferActivity.EXTRA_IMG,
-                                    contact.getImage()
-                            );
-
-                        }
-                    }
-
-                    startActivity(intent);
-                })
-                .show();
-    }*/
-
+    
     private void request(
             String phone,
             String name,

@@ -1,27 +1,153 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.holystock.newmyoffer.views.BorderView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:borderWidth="1dp"
-    app:cornerRadius="@dimen/_99dp"
-    android:layout_marginVertical="@dimen/_5dp"
-    app:borderColor="@color/primary"
-    android:clickable="true"
-    android:background="@drawable/bg_ripple_primary"
-    android:layout_height="wrap_content">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <com.holystock.newmyoffer.views.BorderView
+        android:layout_width="@dimen/_70dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_0dp"
+        android:layout_marginBottom="@dimen/_5dp"
+        android:clickable="true"
+        app:bgColor="@color/primary"
+        app:borderColor="@color/primary"
+        app:borderWidth="@dimen/_1.5dp"
+        app:cornerRadius="@dimen/_99dp">
 
 
-
-    <TextView
-        android:textColor="@color/black"
-        android:text="৳200"
-        android:paddingHorizontal="@dimen/_15dp"
-        android:fontFamily="@font/bangla_medium"
-        android:paddingVertical="@dimen/_2dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/bangla_medium"
+            android:paddingVertical="@dimen/_3dp"
+            android:text="দেখুন"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14sp" />
 
 
-</com.holystock.newmyoffer.views.BorderView>
+    </com.holystock.newmyoffer.views.BorderView>
+
+    <ScrollView
+        android:scrollbars="none"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.holystock.newmyoffer.views.BorderView
+                android:id="@+id/view1"
+                android:layout_width="@dimen/_60dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_5dp"
+                android:background="@drawable/bg_ripple_primary"
+                android:clickable="true"
+                app:borderColor="@color/primary"
+                app:borderWidth="@dimen/_1dp"
+                app:cornerRadius="@dimen/_99dp">
+
+
+                <TextView
+                    android:id="@+id/tv1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/bangla_medium"
+                    android:paddingVertical="@dimen/_3dp"
+                    android:text="৳119"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14sp" />
+
+
+            </com.holystock.newmyoffer.views.BorderView>
+
+            <com.holystock.newmyoffer.views.BorderView
+                android:id="@+id/view2"
+                android:layout_width="@dimen/_60dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_5dp"
+                android:background="@drawable/bg_ripple_primary"
+                android:clickable="true"
+                app:borderColor="@color/primary"
+                app:borderWidth="@dimen/_1dp"
+                app:cornerRadius="@dimen/_99dp">
+
+
+                <TextView
+                    android:id="@+id/tv2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/bangla_medium"
+                    android:paddingVertical="@dimen/_3dp"
+                    android:text="৳200"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14sp" />
+
+
+            </com.holystock.newmyoffer.views.BorderView>
+
+            <com.holystock.newmyoffer.views.BorderView
+                android:id="@+id/view3"
+                android:layout_width="@dimen/_60dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_5dp"
+                android:background="@drawable/bg_ripple_primary"
+                android:clickable="true"
+                android:textSize="@dimen/_14sp"
+                app:borderColor="@color/primary"
+                app:borderWidth="@dimen/_1dp"
+                app:cornerRadius="@dimen/_99dp">
+
+
+                <TextView
+                    android:id="@+id/tv3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/bangla_medium"
+                    android:paddingVertical="@dimen/_3dp"
+                    android:text="৳350"
+                    android:textColor="@color/black" />
+
+
+            </com.holystock.newmyoffer.views.BorderView>
+
+            <com.holystock.newmyoffer.views.BorderView
+                android:id="@+id/view4"
+                android:layout_width="@dimen/_60dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_5dp"
+                android:background="@drawable/bg_ripple_primary"
+                android:clickable="true"
+                android:textSize="@dimen/_14sp"
+                app:borderColor="@color/primary"
+                app:borderWidth="@dimen/_1dp"
+                app:cornerRadius="@dimen/_99dp">
+
+                <TextView
+                    android:id="@+id/tv4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/bangla_medium"
+                    android:paddingVertical="@dimen/_3dp"
+                    android:text="৳548"
+                    android:textColor="@color/black" />
+
+
+            </com.holystock.newmyoffer.views.BorderView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

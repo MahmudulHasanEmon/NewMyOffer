@@ -86,4 +86,6 @@ public class BorderView extends RelativeLayout {
         drawable.setColor(color);
         invalidate();
     }
+
+
 }

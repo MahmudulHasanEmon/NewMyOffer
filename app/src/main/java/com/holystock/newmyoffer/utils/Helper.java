@@ -127,4 +127,8 @@ public class Helper {
             return 0;
         }
     }
+
+    public static String getNumericValue(String text) {
+        return text.replaceAll("[^0-9]", "");
+    }
 }
