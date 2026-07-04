@@ -221,6 +221,8 @@ public class RechargeNumberActivity extends BaseActivity {
                         : View.VISIBLE
         );
 
+        tvNoTitle.setVisibility(View.VISIBLE);
+
         if (!hasData) {
 
             validate(keyword);

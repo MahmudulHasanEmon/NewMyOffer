@@ -1,5 +1,6 @@
-package com.holystock.newmyoffer.fragment;
+package com.holystock.newmyoffer.fragment.recharge;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -14,6 +15,8 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import com.holystock.newmyoffer.R;
+import com.holystock.newmyoffer.activity.service.recharge.RechargeConformActivity;
+import com.holystock.newmyoffer.utils.Helper;
 import com.holystock.newmyoffer.views.BorderView;
 
 import java.util.Objects;
@@ -47,6 +50,20 @@ public class RechargeFragment extends Fragment {
     private void initViews(View root) {
 
         etAmount = root.findViewById(R.id.etAmount);
+
+        root.findViewById(R.id.nextBtn2).setOnClickListener(view -> {
+
+            Helper.hideKeyboard(Objects.requireNonNull(getActivity()));
+
+            startActivity(new Intent(getActivity(), RechargeConformActivity.class));
+        });
+
+        root.findViewById(R.id.nextBtn).setOnClickListener(view -> {
+
+            Helper.hideKeyboard(Objects.requireNonNull(getActivity()));
+
+            startActivity(new Intent(getActivity(), RechargeConformActivity.class));
+        });
 
         BorderView view1 = root.findViewById(R.id.view1);
         BorderView view2 = root.findViewById(R.id.view2);
@@ -153,7 +170,7 @@ public class RechargeFragment extends Fragment {
             boolean selected = i == index;
 
             views[i].setBackgroundColorCustom(
-                    ContextCompat.getColor(Objects.requireNonNull(getContext()), selected
+                    ContextCompat.getColor(requireContext(), selected
                             ? R.color.primaryLight
                             : R.color.white)
             );
@@ -175,7 +192,7 @@ public class RechargeFragment extends Fragment {
         for (int i = 0; i < views.length; i++) {
 
             views[i].setBackgroundColorCustom(
-                    ContextCompat.getColor(Objects.requireNonNull(getContext()), R.color.white)
+                    ContextCompat.getColor(requireContext(), R.color.white)
             );
 
             texts[i].setTextColor(

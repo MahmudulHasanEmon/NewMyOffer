@@ -1,4 +1,4 @@
-package com.holystock.newmyoffer.fragment;
+package com.holystock.newmyoffer.fragment.recharge;
 
 import android.os.Bundle;
 

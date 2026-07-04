@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/statusBar"
+    tools:context=".activity.service.recharge.RechargeConformActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/primary"
+                android:backgroundTint="@color/primary"
+                app:navigationIcon="@drawable/outline_arrow_back_24"
+                app:navigationIconTint="@color/white"
+                app:title="মোবাইল রিচার্জ"
+                app:titleCentered="true"
+                app:titleTextAppearance="@style/ToolbarTitleStyle" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_10dp"
+                android:background="@android:color/transparent"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardElevation="0dp"
+                app:shapeAppearanceOverlay="@style/TopRoundedCard"
+                app:strokeColor="@color/primaryLight"
+                app:strokeWidth="0dp">
+
+                <RelativeLayout
+                    android:id="@+id/mainLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_ripple_primary2"
+                    android:minHeight="64dp"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="10dp">
+
+                    <com.holystock.newmyoffer.views.BorderView
+                        android:id="@+id/operatorLayout"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        app:bgColor="@color/white"
+                        app:borderColor="@color/primaryLight"
+                        app:borderWidth="@dimen/_1.5dp"
+                        app:cornerRadius="1000dp">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_margin="@dimen/_5dp"
+                            app:cardCornerRadius="999dp"
+                            app:cardElevation="0dp">
+
+                            <ImageView
+                                android:id="@+id/imgOperator"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/grameenphone" />
+
+                        </androidx.cardview.widget.CardView>
+
+                    </com.holystock.newmyoffer.views.BorderView>
+
+
+                    <ImageView
+                        android:id="@+id/ivPhoto"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_centerVertical="true"
+                        android:scaleType="centerCrop" />
+
+                    <com.holystock.newmyoffer.views.BorderView
+                        android:id="@+id/photoLayout"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_centerVertical="true"
+                        android:scaleType="centerCrop"
+                        app:bgColor="@color/beautifulWhite"
+                        app:borderWidth="@dimen/_0dp"
+                        app:cornerRadius="1000dp">
+
+                        <TextView
+                            android:id="@+id/tvLetter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:fontFamily="@font/bangla_medium"
+                            android:maxLength="1"
+                            android:text="A"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_22sp" />
+
+                    </com.holystock.newmyoffer.views.BorderView>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_12dp"
+                        android:layout_toEndOf="@id/ivPhoto"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/bangla_medium"
+                            android:includeFontPadding="false"
+                            android:maxLines="1"
+                            android:text="Contact Name"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_15sp" />
+
+                        <TextView
+                            android:id="@+id/tvNumber"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/bangla"
+                            android:includeFontPadding="false"
+                            android:text="01712345678"
+                            android:textColor="#4A4A4A"
+                            android:textSize="@dimen/_14sp" />
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_4dp"
+                android:background="@color/beautifulWhite" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/_15dp"
+                android:paddingVertical="@dimen/_15dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:gravity="start"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/bangla_medium"
+                        android:text="পরিমাণ "
+                        android:textColor="@color/grey"
+                        android:textSize="@dimen/_13sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/bangla_medium"
+                        android:text="৳300.00"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_14sp" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/bangla_medium"
+                        android:text="চার্জ "
+                        android:textColor="@color/grey"
+                        android:textSize="@dimen/_13sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/bangla_medium"
+                        android:text="৳0.00"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_14sp" />
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:gravity="end"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/bangla_medium"
+                        android:text="সর্বমোট "
+                        android:textColor="@color/grey"
+                        android:textSize="@dimen/_13sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/bangla_medium"
+                        android:text="৳300.00"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_14sp" />
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_2dp"
+                android:background="@color/beautifulWhite" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingVertical="@dimen/_10dp">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/bangla_medium"
+                    android:paddingStart="@dimen/_15dp"
+                    android:text="ধরন বেছে নিন "
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/_13sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="@dimen/_15dp">
+
+                    <com.holystock.newmyoffer.views.BorderView
+                        android:id="@+id/view1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/_5dp"
+                        android:background="@drawable/bg_ripple_primary"
+                        android:clickable="true"
+                        app:borderColor="@color/primary"
+                        app:borderWidth="@dimen/_1dp"
+                        app:cornerRadius="@dimen/_99dp">
+
+
+                        <TextView
+                            android:id="@+id/tv1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:fontFamily="@font/bangla_medium"
+                            android:paddingHorizontal="@dimen/_16dp"
+                            android:paddingVertical="@dimen/_3dp"
+                            android:text="প্রিপেইড"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_14sp" />
+
+
+                    </com.holystock.newmyoffer.views.BorderView>
+
+                    <com.holystock.newmyoffer.views.BorderView
+                        android:id="@+id/view2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/_5dp"
+                        android:layout_marginStart="@dimen/_10dp"
+                        android:background="@drawable/bg_ripple_primary"
+                        android:clickable="true"
+                        app:borderColor="@color/primary"
+                        app:borderWidth="@dimen/_1dp"
+                        app:cornerRadius="@dimen/_99dp">
+
+
+                        <TextView
+                            android:id="@+id/tv2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:fontFamily="@font/bangla_medium"
+                            android:paddingHorizontal="@dimen/_16dp"
+                            android:paddingVertical="@dimen/_3dp"
+                            android:text="পোষ্টপেইড"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_14sp" />
+
+
+                    </com.holystock.newmyoffer.views.BorderView>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_4dp"
+                android:layout_marginBottom="@dimen/_10dp"
+                android:background="@color/beautifulWhite" />
+
+            <include layout="@layout/pin_item_view" />
+
+        </LinearLayout>
+
+        <com.holystock.newmyoffer.views.BottomNextButtonView
+            android:id="@+id/bottomNextButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/keyboardRootLayout" />
+
+        <RelativeLayout
+            android:id="@+id/keyboardRootLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true" />
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

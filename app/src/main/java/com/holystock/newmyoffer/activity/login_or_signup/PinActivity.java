@@ -27,11 +27,15 @@ public class PinActivity extends BaseActivity {
                 findViewById(R.id.keyboardRootLayout),
                 findViewById(R.id.tvDisplay),
                 value -> {
+
                     buttonView.setButtonClickable(value.length() == 5);
+
+                    if (value.length() == 5) {
+                        buttonView.setOnClickListener(v -> startActivity(new Intent(PinActivity.this, MainActivity.class)));
+                    }
+
                 }, null
         ).showKeyboard();
-
-        buttonView.setOnClickListener(v -> startActivity(new Intent(PinActivity.this, MainActivity.class)));
 
 
     }

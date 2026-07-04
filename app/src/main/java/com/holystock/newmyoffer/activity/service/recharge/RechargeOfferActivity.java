@@ -5,7 +5,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
@@ -13,11 +12,10 @@ import com.bumptech.glide.Glide;
 import com.google.android.material.tabs.TabLayout;
 import com.holystock.newmyoffer.R;
 import com.holystock.newmyoffer.activity.BaseActivity;
-import com.holystock.newmyoffer.adapter.TabAdapter;
 import com.holystock.newmyoffer.adapter.ViewPagerAdapter;
 import com.holystock.newmyoffer.controller.RechargeSheetController;
-import com.holystock.newmyoffer.fragment.InternetFragment;
-import com.holystock.newmyoffer.fragment.RechargeFragment;
+import com.holystock.newmyoffer.fragment.recharge.InternetFragment;
+import com.holystock.newmyoffer.fragment.recharge.RechargeFragment;
 import com.holystock.newmyoffer.utils.Helper;
 import com.holystock.newmyoffer.utils.appThemes.AppToolbarManager;
 import com.holystock.newmyoffer.utils.appThemes.Status;

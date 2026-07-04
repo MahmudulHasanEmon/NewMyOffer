@@ -6,13 +6,13 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical"
-    tools:context=".fragment.RechargeFragment">
+    tools:context=".fragment.recharge.RechargeFragment">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/topLayout"
         android:layout_width="match_parent"
         android:layout_alignParentTop="true"
-        android:layout_height="@dimen/_200dp"
+        android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_10dp"
         android:layout_marginTop="@dimen/_5dp"
         android:background="@android:color/transparent"
@@ -57,6 +57,7 @@
                 android:gravity="end|center_vertical">
 
                 <RelativeLayout
+                    android:id="@+id/nextBtn2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/bg_ripple_primary"
@@ -82,6 +83,13 @@
 
     </com.google.android.material.card.MaterialCardView>
 
+
+    <com.holystock.newmyoffer.views.BalanceTextView
+        android:text="@string/balance"
+        android:layout_marginTop="@dimen/_10dp"
+        android:layout_below="@id/topLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
 
     <com.holystock.newmyoffer.views.BottomNextButtonView

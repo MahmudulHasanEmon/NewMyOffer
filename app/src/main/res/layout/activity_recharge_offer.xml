@@ -30,10 +30,10 @@
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/_10dp"
+            android:layout_marginVertical="@dimen/_10dp"
             android:background="@android:color/transparent"
             app:cardBackgroundColor="@android:color/white"
-            app:cardElevation="@dimen/_3dp"
+            app:cardElevation="@dimen/_0dp"
             app:shapeAppearanceOverlay="@style/TopRoundedCard"
             app:strokeColor="@color/primaryLight"
             app:strokeWidth="0dp">

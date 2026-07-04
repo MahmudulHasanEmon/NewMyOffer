@@ -44,6 +44,7 @@
 
 
     <declare-styleable name="BalanceTextView">
+        <attr name="customText" format="string" />
         <attr name="customTextColor" format="color" />
         <attr name="customTextSize" format="dimension" />
         <attr name="customTextStyle" format="enum">

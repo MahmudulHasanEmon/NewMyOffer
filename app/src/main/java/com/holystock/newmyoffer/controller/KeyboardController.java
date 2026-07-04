@@ -145,6 +145,8 @@ public class KeyboardController {
                         listener.onKeyPressed(value);
                     }
 
+                } else if (value.length() == maxLength) {
+
                 }
             });
         }
@@ -181,7 +183,7 @@ public class KeyboardController {
             tvDisplay.setText(dot.repeat(value.length()));
 
         }else{
-            tvDisplay.setText("পিন লিখুন ");
+            tvDisplay.setText("পিন নাম্বার লিখুন");
             tvDisplay.setTextColor(context.getColor(R.color.grey));
         }
 
@@ -189,7 +191,7 @@ public class KeyboardController {
 
     private void updateKeyboardIcon(boolean isKeyboardVisible) {
         tvDisplay.setCompoundDrawablesRelativeWithIntrinsicBounds(
-                0,
+                R.drawable.lock_24dp,
                 0,
                 isKeyboardVisible
                         ? R.drawable.keyboard_hide_24dp

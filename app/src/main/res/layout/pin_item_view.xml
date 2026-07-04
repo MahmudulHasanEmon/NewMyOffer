@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tvDisplay"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true"
+    android:layout_marginHorizontal="@dimen/_15dp"
+    android:layout_marginTop="@dimen/_10dp"
+    android:drawableStart="@drawable/lock_24dp"
+    android:drawableEnd="@drawable/keyboard_hide_24dp"
+    android:drawableTint="@color/grey"
+    android:fontFamily="@font/bangla_medium"
+    android:text="পিন নাম্বার লিখুন "
+    android:textAlignment="center"
+    android:textColor="@color/grey"
+    android:textSize="@dimen/_15sp" />

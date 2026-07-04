@@ -20,12 +20,12 @@
         <FrameLayout
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:padding="4dp">
+            android:layout_weight="1">
 
             <Button
                 android:id="@+id/btn1"
                 style="@style/_keyboard"
+                android:padding="@dimen/_3dp"
                 android:layout_width="@dimen/_55dp"
                 android:layout_height="@dimen/_55dp"
                 android:background="@drawable/keyboard_button_ripple_effect"
@@ -35,11 +35,11 @@
         <FrameLayout
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:padding="4dp">
+            android:layout_weight="1">
 
             <Button
                 android:id="@+id/btn4"
+                android:padding="@dimen/_3dp"
                 style="@style/_keyboard"
                 android:layout_width="@dimen/_55dp"
                 android:layout_height="@dimen/_55dp"
@@ -50,11 +50,11 @@
         <FrameLayout
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:padding="4dp">
+            android:layout_weight="1">
 
             <Button
                 android:id="@+id/btn7"
+                android:padding="@dimen/_3dp"
                 style="@style/_keyboard"
                 android:layout_width="@dimen/_55dp"
                 android:layout_height="@dimen/_55dp"
@@ -65,10 +65,10 @@
         <FrameLayout
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:padding="4dp">
+            android:layout_weight="1">
 
             <ImageButton
+                android:padding="@dimen/_3dp"
                 android:src="@drawable/backspace_24dp"
                 android:id="@+id/btnDelete"
                 style="@style/_keyboard"
@@ -92,14 +92,14 @@
         <FrameLayout
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:padding="4dp">
+            android:layout_weight="1">
 
             <Button
                 android:id="@+id/btn2"
                 style="@style/_keyboard"
                 android:layout_width="@dimen/_55dp"
                 android:layout_height="@dimen/_55dp"
+                android:padding="@dimen/_3dp"
                 android:background="@drawable/keyboard_button_ripple_effect"
                 android:text="2" />
         </FrameLayout>
@@ -107,12 +107,12 @@
         <FrameLayout
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:padding="4dp">
+            android:layout_weight="1">
 
             <Button
                 android:id="@+id/btn5"
                 style="@style/_keyboard"
+                android:padding="@dimen/_3dp"
                 android:layout_width="@dimen/_55dp"
                 android:layout_height="@dimen/_55dp"
                 android:background="@drawable/keyboard_button_ripple_effect"
@@ -122,11 +122,11 @@
         <FrameLayout
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:padding="4dp">
+            android:layout_weight="1">
 
             <Button
                 android:id="@+id/btn8"
+                android:padding="@dimen/_3dp"
                 style="@style/_keyboard"
                 android:layout_width="@dimen/_55dp"
                 android:layout_height="@dimen/_55dp"
@@ -137,12 +137,12 @@
         <FrameLayout
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:padding="4dp">
+            android:layout_weight="1">
 
             <Button
                 android:id="@+id/btn0"
                 style="@style/_keyboard"
+                android:padding="@dimen/_3dp"
                 android:layout_width="@dimen/_55dp"
                 android:layout_height="@dimen/_55dp"
                 android:background="@drawable/keyboard_button_ripple_effect"
@@ -163,12 +163,12 @@
         <FrameLayout
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:padding="4dp">
+            android:layout_weight="1">
 
             <Button
                 android:id="@+id/btn3"
                 style="@style/_keyboard"
+                android:padding="@dimen/_3dp"
                 android:layout_width="@dimen/_55dp"
                 android:layout_height="@dimen/_55dp"
                 android:background="@drawable/keyboard_button_ripple_effect"
@@ -178,14 +178,14 @@
         <FrameLayout
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:padding="4dp">
+            android:layout_weight="1">
 
             <Button
                 android:id="@+id/btn6"
                 style="@style/_keyboard"
                 android:layout_width="@dimen/_55dp"
                 android:layout_height="@dimen/_55dp"
+                android:padding="@dimen/_3dp"
                 android:background="@drawable/keyboard_button_ripple_effect"
                 android:text="6" />
         </FrameLayout>
@@ -193,12 +193,12 @@
         <FrameLayout
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:padding="4dp">
+            android:layout_weight="1">
 
             <Button
                 android:id="@+id/btn9"
                 style="@style/_keyboard"
+                android:padding="@dimen/_3dp"
                 android:layout_width="@dimen/_55dp"
                 android:layout_height="@dimen/_55dp"
                 android:background="@drawable/keyboard_button_ripple_effect"
@@ -208,14 +208,14 @@
         <FrameLayout
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:padding="4dp">
+            android:layout_weight="1">
 
             <ImageButton
                 android:id="@+id/btnSubmit"
                 style="@style/_keyboard"
                 android:layout_width="@dimen/_55dp"
                 android:layout_height="@dimen/_55dp"
+                android:padding="@dimen/_3dp"
                 android:src="@drawable/keyboard_hide_26dp"
                 android:background="@drawable/keyboard_button_ripple_effect"
                 android:text="✓"
