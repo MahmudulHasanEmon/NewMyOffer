@@ -56,6 +56,8 @@ public class RechargeFragment extends Fragment {
             Helper.hideKeyboard(Objects.requireNonNull(getActivity()));
 
             startActivity(new Intent(getActivity(), RechargeConformActivity.class));
+
+
         });
 
         root.findViewById(R.id.nextBtn).setOnClickListener(view -> {
