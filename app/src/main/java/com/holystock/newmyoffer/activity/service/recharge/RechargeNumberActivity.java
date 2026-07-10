@@ -51,7 +51,6 @@ public class RechargeNumberActivity extends BaseActivity {
         setContentView(R.layout.activity_recharge_number);
 
         new Status(this).setLightStatusBar();
-        new AppToolbarManager(this).init();
 
         initViews();
         setupRecyclerView();
@@ -284,27 +283,29 @@ public class RechargeNumberActivity extends BaseActivity {
                 .addItem("Teletalk", R.drawable.teletalk)
                 .onItemSelected((title, icon, position) -> {
 
-                    Intent intent = new Intent(
+                    Bundle bundle = new Bundle();
+
+                    /*Intent bundle = new Intent(
                             this,
                             RechargeOfferActivity.class
-                    );
+                    );*/
 
-                    intent.putExtra(
+                    bundle.putString(
                             RechargeOfferActivity.EXTRA_NUMBER,
                             phone
                     );
 
-                    intent.putExtra(
+                    bundle.putString(
                             RechargeOfferActivity.EXTRA_OPERATOR,
                             title
                     );
 
-                    intent.putExtra(
+                    bundle.putString(
                             RechargeOfferActivity.EXTRA_NAME,
                             name
                     );
 
-                    intent.putExtra(
+                    bundle.putInt(
                             RechargeOfferActivity.EXTRA_ICON,
                             icon
                     );
@@ -314,7 +315,7 @@ public class RechargeNumberActivity extends BaseActivity {
                         if (contact.getImage() != null
                                 && !contact.getImage().isEmpty()) {
 
-                            intent.putExtra(
+                            bundle.putString(
                                     RechargeOfferActivity.EXTRA_IMG,
                                     contact.getImage()
                             );
@@ -335,19 +336,25 @@ public class RechargeNumberActivity extends BaseActivity {
                                     (name == null ? 0 : name.hashCode())
                             ) % Helper.lightColors.length;
 
-                            intent.putExtra(
+                            bundle.putString(
                                     RechargeOfferActivity.EXTRA_LETTER,
                                     firstLetter
                             );
 
-                            intent.putExtra(
+                            bundle.putInt(
                                     RechargeOfferActivity.EXTRA_COLOR,
                                     Helper.lightColors[colorIndex]
                             );
                         }
                     }
 
-                    startActivity(intent);
+                    openActivity(RechargeOfferActivity.class, bundle);
+
+
+
+
+
+
                 })
                 .show();
     }

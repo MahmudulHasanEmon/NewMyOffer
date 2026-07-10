@@ -55,4 +55,12 @@
         <item name="cornerSizeBottomRight">@dimen/_10dp</item>
     </style>
 
+    <style name="DialogAnimation">
+
+        <item name="android:windowEnterAnimation">@anim/dialog_scale</item>
+
+        <item name="android:windowExitAnimation">@anim/dialog_scale_out</item>
+
+    </style>
+
 </resources>

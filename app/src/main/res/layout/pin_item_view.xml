@@ -8,9 +8,9 @@
     android:layout_marginTop="@dimen/_10dp"
     android:drawableStart="@drawable/lock_24dp"
     android:drawableEnd="@drawable/keyboard_hide_24dp"
-    android:drawableTint="@color/grey"
+    android:drawableTint="@color/greyDark"
     android:fontFamily="@font/bangla_medium"
     android:text="পিন নাম্বার লিখুন "
     android:textAlignment="center"
-    android:textColor="@color/grey"
+    android:textColor="@color/greyHint"
     android:textSize="@dimen/_15sp" />

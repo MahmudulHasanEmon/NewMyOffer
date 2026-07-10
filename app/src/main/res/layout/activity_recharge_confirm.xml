@@ -6,8 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/statusBar"
-    tools:context=".activity.service.recharge.RechargeConformActivity">
-
+    tools:context=".activity.service.recharge.RechargeConfirmActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -19,17 +18,19 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <com.google.android.material.appbar.MaterialToolbar
-                android:id="@+id/toolbar"
+            <com.holystock.newmyoffer.views.Toolbar
+                android:id="@+id/myToolbar"
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:background="@color/primary"
-                android:backgroundTint="@color/primary"
-                app:navigationIcon="@drawable/outline_arrow_back_24"
-                app:navigationIconTint="@color/white"
-                app:title="মোবাইল রিচার্জ"
+                android:layout_height="wrap_content"
+                app:toolbarTitle="মোবাইল রিচার্জ"
                 app:titleCentered="true"
-                app:titleTextAppearance="@style/ToolbarTitleStyle" />
+                app:titleTextSize="@dimen/_toolbarText"
+                app:showBackButton="true"
+                app:navigationIcon="@drawable/outline_arrow_back_24"
+                app:navigationTint="@color/white"
+                app:titleColor="@color/white"
+                app:toolbarBackground="@color/primary"
+                app:toolbarHeight="@dimen/_54dp"/>
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
@@ -295,7 +296,7 @@
                             android:paddingVertical="@dimen/_3dp"
                             android:text="প্রিপেইড"
                             android:textColor="@color/black"
-                            android:textSize="@dimen/_14sp" />
+                            android:textSize="@dimen/_13sp" />
 
 
                     </com.holystock.newmyoffer.views.BorderView>
@@ -312,7 +313,6 @@
                         app:borderWidth="@dimen/_1dp"
                         app:cornerRadius="@dimen/_99dp">
 
-
                         <TextView
                             android:id="@+id/tv2"
                             android:layout_width="wrap_content"
@@ -323,7 +323,7 @@
                             android:paddingVertical="@dimen/_3dp"
                             android:text="পোষ্টপেইড"
                             android:textColor="@color/black"
-                            android:textSize="@dimen/_14sp" />
+                            android:textSize="@dimen/_13sp" />
 
 
                     </com.holystock.newmyoffer.views.BorderView>

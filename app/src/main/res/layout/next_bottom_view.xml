@@ -8,8 +8,6 @@
         android:layout_height="@dimen/_50dp"
         android:background="@drawable/top_corner_carb"
         android:backgroundTint="@color/unselected"
-        android:clickable="false"
-        android:foreground="?attr/selectableItemBackground"
         android:padding="@dimen/_10dp">
 
         <ImageView

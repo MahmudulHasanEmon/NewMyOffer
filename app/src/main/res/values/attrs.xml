@@ -54,5 +54,30 @@
 
     </declare-styleable>
 
+        <declare-styleable name="Toolbar">
+
+            <attr name="titleTextSize" format="dimension"/>
+
+            <attr name="menu" format="reference"/>
+
+            <attr name="toolbarTitle" format="string"/>
+
+            <attr name="titleCentered" format="boolean"/>
+
+            <attr name="showBackButton" format="boolean"/>
+
+            <attr name="navigationIcon" format="reference"/>
+
+            <attr name="navigationTint" format="color"/>
+
+            <attr name="titleColor" format="color"/>
+
+            <attr name="toolbarBackground" format="color"/>
+
+            <attr name="toolbarHeight" format="dimension"/>
+
+        </declare-styleable>
+
+
 
 </resources>

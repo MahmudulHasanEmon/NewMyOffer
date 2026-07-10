@@ -20,6 +20,7 @@
         <FrameLayout
             android:layout_width="wrap_content"
             android:layout_height="0dp"
+            android:padding="@dimen/_2dp"
             android:layout_weight="1">
 
             <Button
@@ -35,6 +36,8 @@
         <FrameLayout
             android:layout_width="wrap_content"
             android:layout_height="0dp"
+            android:padding="@dimen/_2dp"
+
             android:layout_weight="1">
 
             <Button
@@ -49,6 +52,7 @@
 
         <FrameLayout
             android:layout_width="wrap_content"
+            android:padding="@dimen/_2dp"
             android:layout_height="0dp"
             android:layout_weight="1">
 
@@ -64,6 +68,7 @@
 
         <FrameLayout
             android:layout_width="wrap_content"
+            android:padding="@dimen/_2dp"
             android:layout_height="0dp"
             android:layout_weight="1">
 
@@ -91,6 +96,7 @@
 
         <FrameLayout
             android:layout_width="wrap_content"
+            android:padding="@dimen/_2dp"
             android:layout_height="0dp"
             android:layout_weight="1">
 
@@ -106,6 +112,7 @@
 
         <FrameLayout
             android:layout_width="wrap_content"
+            android:padding="@dimen/_2dp"
             android:layout_height="0dp"
             android:layout_weight="1">
 
@@ -121,6 +128,7 @@
 
         <FrameLayout
             android:layout_width="wrap_content"
+            android:padding="@dimen/_2dp"
             android:layout_height="0dp"
             android:layout_weight="1">
 
@@ -136,6 +144,7 @@
 
         <FrameLayout
             android:layout_width="wrap_content"
+            android:padding="@dimen/_2dp"
             android:layout_height="0dp"
             android:layout_weight="1">
 
@@ -162,6 +171,7 @@
 
         <FrameLayout
             android:layout_width="wrap_content"
+            android:padding="@dimen/_2dp"
             android:layout_height="0dp"
             android:layout_weight="1">
 
@@ -177,6 +187,7 @@
 
         <FrameLayout
             android:layout_width="wrap_content"
+            android:padding="@dimen/_2dp"
             android:layout_height="0dp"
             android:layout_weight="1">
 
@@ -192,6 +203,7 @@
 
         <FrameLayout
             android:layout_width="wrap_content"
+            android:padding="@dimen/_2dp"
             android:layout_height="0dp"
             android:layout_weight="1">
 
@@ -207,6 +219,7 @@
 
         <FrameLayout
             android:layout_width="wrap_content"
+            android:padding="@dimen/_2dp"
             android:layout_height="0dp"
             android:layout_weight="1">
 

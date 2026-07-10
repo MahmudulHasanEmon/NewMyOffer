@@ -14,18 +14,19 @@
         android:background="@color/white"
         android:orientation="vertical">
 
-
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/toolbar"
+        <com.holystock.newmyoffer.views.Toolbar
+            android:id="@+id/myToolbar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/primary"
-            android:backgroundTint="@color/primary"
+            android:layout_height="wrap_content"
+            app:toolbarTitle="মোবাইল রিচার্জ"
             app:titleCentered="true"
+            app:titleTextSize="@dimen/_toolbarText"
+            app:showBackButton="true"
             app:navigationIcon="@drawable/outline_arrow_back_24"
-            app:navigationIconTint="@color/white"
-            app:title="মোবাইল রিচার্জ"
-            app:titleTextAppearance="@style/ToolbarTitleStyle" />
+            app:navigationTint="@color/white"
+            app:titleColor="@color/white"
+            app:toolbarBackground="@color/primary"
+            app:toolbarHeight="@dimen/_54dp"/>
 
 
         <androidx.cardview.widget.CardView

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_dialog"
+    android:orientation="vertical"
+    android:layout_marginBottom="@dimen/_16dp"
+    android:layout_marginHorizontal="@dimen/_8dp"
+    android:paddingHorizontal="@dimen/_16dp">
+
+    <RelativeLayout
+        android:id="@+id/topLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_65dp">
+
+        <ImageView
+            android:id="@+id/close"
+            android:layout_width="@dimen/_28dp"
+            android:layout_height="@dimen/_28dp"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/sharp_close_24"
+            android:backgroundTint="@color/primary" />
+
+        <TextView
+            android:id="@+id/title"
+            android:textColor="@color/primary"
+            android:fontFamily="@font/bangla_medium"
+            android:textSize="@dimen/_17sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@id/close"
+            android:paddingEnd="@dimen/_16dp"
+            android:text="মোবাইল রিচারজ নিশ্চিত করুন" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_below="@id/topLayout"
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_ripple_primary2"
+        android:minHeight="64dp"
+        android:paddingVertical="@dimen/_16dp">
+
+        <ImageView
+            android:id="@+id/ivPhoto"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_centerVertical="true"
+            android:scaleType="centerCrop" />
+
+        <com.holystock.newmyoffer.views.BorderView
+            android:id="@+id/photoLayout"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_centerVertical="true"
+            android:scaleType="centerCrop"
+            app:bgColor="@color/beautifulWhite"
+            app:borderWidth="@dimen/_0dp"
+            app:cornerRadius="1000dp">
+
+            <TextView
+                android:id="@+id/tvLetter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/bangla_medium"
+                android:maxLength="1"
+                android:text="A"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_22sp" />
+
+        </com.holystock.newmyoffer.views.BorderView>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12dp"
+            android:layout_toEndOf="@id/ivPhoto"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/bangla_medium"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:text="Contact Name"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_15sp" />
+
+            <TextView
+                android:id="@+id/tvNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/bangla"
+                android:includeFontPadding="false"
+                android:text="01712345678"
+                android:textColor="#4A4A4A"
+                android:textSize="@dimen/_14sp" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <TableLayout
+        android:layout_below="@id/mainLayout"
+        android:id="@+id/tableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="*"/>
+
+
+    <LinearLayout
+        android:layout_below="@id/mainLayout"
+        android:id="@+id/tableContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"/>
+
+
+    <View
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+</RelativeLayout>

@@ -21,7 +21,8 @@ public class LoginActivity extends BaseActivity {
         TextView tvTerms = findViewById(R.id.tvTerms);
         tvTerms.setText(Html.fromHtml("<u>নিয়ম ও শর্তসমূহ</u>", Html.FROM_HTML_MODE_LEGACY));
 
-        findViewById(R.id.nextBtn).setOnClickListener(v -> startActivity(new Intent(this, OtpActivity.class)));
+        //findViewById(R.id.nextBtn).setOnClickListener(v -> startActivity(new Intent(this, OtpActivity.class)));
+        findViewById(R.id.nextBtn).setOnClickListener(v -> openActivity(OtpActivity.class,null));
 
 
     }

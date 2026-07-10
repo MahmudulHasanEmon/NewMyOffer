@@ -51,7 +51,6 @@ public class RechargeOfferActivity extends BaseActivity {
         setContentView(R.layout.activity_recharge_offer);
 
         new Status(this).setLightStatusBar();
-        new AppToolbarManager(this).init();
 
         initViews();
         receiveData();
@@ -110,11 +109,13 @@ public class RechargeOfferActivity extends BaseActivity {
             return;
         }
 
-        phone = getIntent().getStringExtra(EXTRA_NUMBER);
-        operator = getIntent().getStringExtra(EXTRA_OPERATOR);
-        name = getIntent().getStringExtra(EXTRA_NAME);
+        Bundle bundle = getIntent().getExtras();
 
-        icon = getIntent().getIntExtra(
+        phone = bundle.getString(EXTRA_NUMBER);
+        operator = bundle.getString(EXTRA_OPERATOR);
+        name = bundle.getString(EXTRA_NAME);
+
+        icon = bundle.getInt(
                 EXTRA_ICON,
                 R.drawable.backspace_24dp
         );
@@ -122,6 +123,8 @@ public class RechargeOfferActivity extends BaseActivity {
         if (phone == null) phone = "";
         if (operator == null) operator = "";
         if (name == null) name = "";
+
+
     }
 
     private void bindData() {

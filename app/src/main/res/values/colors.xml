@@ -8,8 +8,15 @@
     <color name="primaryDark">#249728</color>
     <color name="statusBar">@color/primary</color>
 
-    <color name="grey">#808080</color>
+    <color name="grey">#757575</color>
     <color name="greyLight">#D3D3D3</color>
+    <color name="greyDark">#424242</color>
+    <color name="greyBorder">#E0E0E0</color>
+    <color name="greyBackground">#F5F5F5</color>
+    <color name="greyHint">#9E9E9E</color>
+    <color name="greyDivider">#EEEEEE</color>
+    <color name="greyDisabled">#BDBDBD</color>
+    <color name="greyCard">#FAFAFA</color>
 
     <color name="selectedLight">@color/primaryLight</color>
     <color name="selectedDark">@color/primary</color>
@@ -17,6 +24,7 @@
 
 
     <color name="beautifulWhite">#F7F7F7</color>
+
 
 
 

@@ -5,10 +5,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
 import com.holystock.newmyoffer.R;
+import com.holystock.newmyoffer.activity.login_or_signup.PinActivity;
 
 public class KeyboardController {
 
@@ -25,10 +27,8 @@ public class KeyboardController {
     private final TextView tvDisplay;
     private final OnKeyPressListener listener;
     private final OnChangeViewListener viewListener;
-
     private View keyboardView;
     private boolean isShowing = false;
-
     private int maxLength = 5;
     private String value = "";
 
@@ -72,9 +72,9 @@ public class KeyboardController {
 
         isShowing = true;
 
-        updateKeyboardIcon(true);
+        updateKeyboardIcon(true, value.length() == maxLength);
 
-        if (viewListener !=null){
+        if (viewListener != null) {
             viewListener.onViewChange(true);
         }
 
@@ -84,7 +84,7 @@ public class KeyboardController {
 
         if (!isShowing || keyboardView == null) return;
 
-        if (viewListener !=null){
+        if (viewListener != null) {
             viewListener.onViewChange(false);
         }
 
@@ -96,7 +96,7 @@ public class KeyboardController {
                     rootView.removeView(keyboardView);
                     keyboardView = null;
                     isShowing = false;
-                    updateKeyboardIcon(false);
+                    updateKeyboardIcon(false, value.length() == maxLength);
 
                 })
                 .start();
@@ -145,8 +145,9 @@ public class KeyboardController {
                         listener.onKeyPressed(value);
                     }
 
-                } else if (value.length() == maxLength) {
-
+                    if (value.length() == maxLength) {
+                        updateKeyboardIcon(this.isShowing, true);
+                    }
                 }
             });
         }
@@ -173,25 +174,25 @@ public class KeyboardController {
 
     }
 
-    public void initDisplay(){
+    public void initDisplay() {
 
-        if (!value.isEmpty()){
+        if (!value.isEmpty()) {
             tvDisplay.setLetterSpacing(0.3F);
             tvDisplay.setTextColor(context.getColor(R.color.black));
 
             String dot = "\u2B24";
             tvDisplay.setText(dot.repeat(value.length()));
 
-        }else{
+        } else {
             tvDisplay.setText("পিন নাম্বার লিখুন");
             tvDisplay.setTextColor(context.getColor(R.color.grey));
         }
 
     }
 
-    private void updateKeyboardIcon(boolean isKeyboardVisible) {
+    private void updateKeyboardIcon(boolean isKeyboardVisible, boolean isLock) {
         tvDisplay.setCompoundDrawablesRelativeWithIntrinsicBounds(
-                R.drawable.lock_24dp,
+                (context instanceof PinActivity) ? 0 : (isLock ? R.drawable.lock_open_24dp : R.drawable.lock_24dp),
                 0,
                 isKeyboardVisible
                         ? R.drawable.keyboard_hide_24dp
@@ -211,6 +212,9 @@ public class KeyboardController {
         if (listener != null) {
             listener.onKeyPressed(value);
         }
+
+        updateKeyboardIcon(this.isShowing, value.length() == maxLength);
+
     }
 
     public void removeLast() {
@@ -223,6 +227,9 @@ public class KeyboardController {
             if (listener != null) {
                 listener.onKeyPressed(value);
             }
+
+            updateKeyboardIcon(true, value.length() == maxLength);
+
         }
     }
 
@@ -232,6 +239,8 @@ public class KeyboardController {
         if (listener != null) {
             listener.onKeyPressed(this.value);
         }
+
+        updateKeyboardIcon(true, value.length() == maxLength);
     }
 
 }

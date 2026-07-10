@@ -16,6 +16,7 @@ public class BottomNextButtonView extends RelativeLayout {
 
     private TextView textView;
     private RelativeLayout layout;
+    private boolean buttonClickable = false;
 
     public BottomNextButtonView(Context context) {
         super(context);
@@ -39,9 +40,7 @@ public class BottomNextButtonView extends RelativeLayout {
         textView = findViewById(R.id.tvButtonText);
         layout = findViewById(R.id.buttonTint);
 
-
-        setClickable(false);
-
+        this.setButtonClickable(false);
 
     }
 
@@ -58,8 +57,20 @@ public class BottomNextButtonView extends RelativeLayout {
     }
 
     public void setButtonClickable(boolean clickable) {
-        layout.setClickable(clickable);
-        setButtonTint(clickable ? R.color.selectedDark : R.color.unselected);
+        this.buttonClickable = clickable;
+
+        layout.setBackgroundTintList(
+                ColorStateList.valueOf(
+                        ContextCompat.getColor(
+                                getContext(),
+                                clickable ? R.color.selectedDark : R.color.unselected
+                        )
+                )
+        );
+    }
+
+    public boolean isButtonClickable() {
+        return buttonClickable;
     }
 
 

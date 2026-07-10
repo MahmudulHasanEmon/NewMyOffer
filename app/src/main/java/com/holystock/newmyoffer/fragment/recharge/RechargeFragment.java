@@ -15,7 +15,8 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import com.holystock.newmyoffer.R;
-import com.holystock.newmyoffer.activity.service.recharge.RechargeConformActivity;
+import com.holystock.newmyoffer.activity.service.recharge.RechargeConfirmActivity;
+import com.holystock.newmyoffer.activity.service.recharge.RechargeNumberActivity;
 import com.holystock.newmyoffer.utils.Helper;
 import com.holystock.newmyoffer.views.BorderView;
 
@@ -51,21 +52,20 @@ public class RechargeFragment extends Fragment {
 
         etAmount = root.findViewById(R.id.etAmount);
 
-        root.findViewById(R.id.nextBtn2).setOnClickListener(view -> {
+        View.OnClickListener next = v -> {
+            Intent intent = new Intent(getContext(), RechargeConfirmActivity.class);
+            startActivity(intent);
 
-            Helper.hideKeyboard(Objects.requireNonNull(getActivity()));
+            Objects.requireNonNull(getActivity()).overridePendingTransition(
+                    R.anim.activity_open_enter,
+                    R.anim.activity_open_exit
+            );
+        };
 
-            startActivity(new Intent(getActivity(), RechargeConformActivity.class));
 
+        root.findViewById(R.id.nextBtn2).setOnClickListener(next);
+        root.findViewById(R.id.nextBtn).setOnClickListener(next);
 
-        });
-
-        root.findViewById(R.id.nextBtn).setOnClickListener(view -> {
-
-            Helper.hideKeyboard(Objects.requireNonNull(getActivity()));
-
-            startActivity(new Intent(getActivity(), RechargeConformActivity.class));
-        });
 
         BorderView view1 = root.findViewById(R.id.view1);
         BorderView view2 = root.findViewById(R.id.view2);

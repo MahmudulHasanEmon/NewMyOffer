@@ -3,23 +3,25 @@ package com.holystock.newmyoffer.activity.service.recharge;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.holystock.newmyoffer.R;
 import com.holystock.newmyoffer.activity.BaseActivity;
 import com.holystock.newmyoffer.controller.KeyboardController;
+import com.holystock.newmyoffer.model.Confirm;
+import com.holystock.newmyoffer.model.Contact;
 import com.holystock.newmyoffer.utils.appThemes.AppToolbarManager;
 import com.holystock.newmyoffer.utils.appThemes.Status;
+import com.holystock.newmyoffer.utils.dialog.MyConfirmDialog;
 import com.holystock.newmyoffer.views.BorderView;
 import com.holystock.newmyoffer.views.BottomNextButtonView;
 
-public class RechargeConformActivity extends BaseActivity {
+import java.util.ArrayList;
+import java.util.List;
+
+public class RechargeConfirmActivity extends BaseActivity {
 
     private BorderView[] views;
     private TextView[] texts;
@@ -28,32 +30,48 @@ public class RechargeConformActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recharge_conform);
+        setContentView(R.layout.activity_recharge_confirm);
 
         new Status(this).setLightStatusBar();
-        new AppToolbarManager(this).init();
 
         BottomNextButtonView buttonView = findViewById(R.id.bottomNextButton);
+        buttonView.setButtonClickable(false);
 
-
-
-        new KeyboardController(
+        KeyboardController keyboardController = new KeyboardController(
                 this,
                 findViewById(R.id.keyboardRootLayout),
                 findViewById(R.id.tvDisplay),
                 value -> {
 
-                    buttonView.setButtonClickable(value.length() == 5);
+                    boolean isValid = value.length() == 5;
+                    buttonView.setButtonClickable(isValid);
 
-                    if (value.length() == 5){
-                        buttonView.setButtonTint(R.color.selectedDark);
-                    }else{
-                        buttonView.setButtonTint(R.color.unselected);
-                    }
+                },
+                null
+        );
 
-                }, null
+        keyboardController.showKeyboard();
 
-        ).showKeyboard();
+        buttonView.setOnClickListener(v -> {
+
+            if (!buttonView.isButtonClickable()) {
+                return;
+            }
+
+            Contact contact = new Contact("MD. Mahmudul Hasan Emon", new ArrayList<>(List.of("01845416702")), "hjhjhj");
+
+            Confirm.Body body = new Confirm.Body(10, 10, 10, 10, 10, 10, "jhgh");
+
+            Confirm confirm = new Confirm("recharge", "Mobile Recharge", "to Confirm", contact, body);
+
+            MyConfirmDialog.show(
+                    this,
+                    confirm,
+                    vv -> Toast.makeText(this, "Done", Toast.LENGTH_SHORT).show()
+            );
+
+        });
+
 
         BorderView view1 = findViewById(R.id.view1);
         BorderView view2 = findViewById(R.id.view2);
@@ -92,13 +110,13 @@ public class RechargeConformActivity extends BaseActivity {
             boolean selected = i == index;
 
             views[i].setBackgroundColorCustom(
-                    ContextCompat.getColor(RechargeConformActivity.this, selected
+                    ContextCompat.getColor(RechargeConfirmActivity.this, selected
                             ? R.color.primaryLight
                             : R.color.white)
             );
 
             texts[i].setTextColor(
-                    RechargeConformActivity.this.getColor(
+                    RechargeConfirmActivity.this.getColor(
                             R.color.black
                     )
             );
@@ -106,6 +124,7 @@ public class RechargeConformActivity extends BaseActivity {
 
         animateSelection(views[index]);
     }
+
     private void animateSelection(View view) {
 
         view.animate()

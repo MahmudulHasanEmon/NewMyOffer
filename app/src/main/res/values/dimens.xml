@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingDefaultResource">
 
-    <dimen name="_toolbarText">@dimen/_16sp</dimen>
+    <dimen name="_toolbarText">@dimen/_17sp</dimen>
 
 
     <dimen name="_0dp">0dp</dimen>

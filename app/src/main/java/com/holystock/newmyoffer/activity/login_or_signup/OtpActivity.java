@@ -22,7 +22,7 @@ public class OtpActivity extends BaseActivity {
 
         new Status(this).setLightStatusBar();
 
-        findViewById(R.id.nextBtn).setOnClickListener(v -> startActivity(new Intent(this, PinActivity.class)));
+        findViewById(R.id.nextBtn).setOnClickListener(v -> openActivity(PinActivity.class,null));
 
 
     }
