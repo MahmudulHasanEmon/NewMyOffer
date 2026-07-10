@@ -4,4 +4,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="balance">ব্যবহারযোগ্য ব্যালেন্স ৳100.89</string>
 
+    <string name="login_or_register">Login or Register</string>
+
 </resources>

@@ -8,17 +8,33 @@
     android:background="@color/primary"
     tools:context=".activity.login_or_signup.LoginActivity">
 
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white"
         android:padding="@dimen/_15dp">
 
+        <com.holystock.newmyoffer.views.LanguageToggleButton
+            android:id="@+id/languageToggle"
+            android:layout_width="@dimen/_100dp"
+            android:layout_height="@dimen/_30dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            app:lang_bg_color="@color/beautifulWhite"
+            app:lang_font_family="@font/bangla_medium"
+            app:lang_left_text="Eng"
+            app:lang_right_text="বাং"
+            app:lang_selector_color="@color/primary"
+            app:lang_selector_stroke_width="@dimen/_1.5dp"
+            app:lang_text_color_active="@color/black"
+            app:lang_text_color_inactive="@color/greyDark"
+            app:lang_text_size="@dimen/_titleSmall" />
+
         <ImageView
             android:id="@+id/bg_img"
             android:layout_width="@dimen/_200dp"
             android:layout_height="200dp"
+            android:layout_below="@id/languageToggle"
             android:layout_centerHorizontal="true"
             android:layout_marginHorizontal="@dimen/_20dp"
             android:layout_marginTop="@dimen/_20dp"
@@ -31,9 +47,10 @@
             android:layout_below="@id/bg_img"
             android:layout_centerHorizontal="true"
             android:fontFamily="@font/bangla_bold"
-            android:text="লগইন / রেজিস্টার"
+            android:text="@string/login_or_register"
+            app:langKey="login_or_register"
             android:textColor="@color/black"
-            android:textSize="@dimen/_24sp" />
+            android:textSize="@dimen/_titleLarge" />
 
         <TextView
             android:id="@+id/tvSubTitle"
@@ -43,8 +60,8 @@
             android:layout_centerHorizontal="true"
             android:fontFamily="@font/bangla_medium"
             android:text="হ্যালো, আমাদের প্ল্যাটফর্মে আপনাকে স্বাগতম"
-            android:textColor="#bbb"
-            android:textSize="@dimen/_14sp" />
+            android:textColor="@color/greyHint"
+            android:textSize="@dimen/_titleSmall" />
 
 
         <com.holystock.newmyoffer.views.BorderView
@@ -56,7 +73,7 @@
             android:layout_marginTop="@dimen/_25dp"
             android:paddingHorizontal="@dimen/_15dp"
             app:bgColor="@android:color/white"
-            app:borderColor="@color/greyLight"
+            app:borderColor="@color/greyBorder"
             app:borderWidth="@dimen/_1.5dp"
             app:cornerRadius="@dimen/_10dp">
 
@@ -69,12 +86,11 @@
                 android:background="@android:color/transparent"
                 android:fontFamily="@font/bangla_medium"
                 android:letterSpacing="0.05"
-                android:textColor="@color/black"
                 android:text="🇧🇩  +88"
-                android:textSize="@dimen/_15sp" />
+                android:textColor="@color/black"
+                android:textSize="@dimen/_titleMedium" />
 
             <EditText
-                android:textColor="@color/black"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_centerVertical="true"
@@ -83,11 +99,12 @@
                 android:fontFamily="@font/bangla_medium"
                 android:hint="017xxxxxxxx"
                 android:inputType="number"
-                android:textColorHint="@color/grey"
                 android:letterSpacing="0.05"
                 android:maxLength="15"
                 android:maxLines="1"
-                android:textSize="@dimen/_15sp" />
+                android:textColor="@color/black"
+                android:textColorHint="@color/greyHint"
+                android:textSize="@dimen/_titleMedium" />
 
         </com.holystock.newmyoffer.views.BorderView>
 
@@ -131,7 +148,7 @@
                 android:fontFamily="@font/bangla_medium"
                 android:text="আপনি "
                 android:textColor="@color/black"
-                android:textSize="@dimen/_15sp" />
+                android:textSize="@dimen/_titleSmall" />
 
             <TextView
                 android:id="@+id/tvTerms"
@@ -141,7 +158,7 @@
                 android:fontFamily="@font/bangla_medium"
                 android:text=" নিয়ম ও শর্তসমূহ "
                 android:textColor="@color/primary"
-                android:textSize="@dimen/_15sp" />
+                android:textSize="@dimen/_titleSmall" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -150,7 +167,7 @@
                 android:fontFamily="@font/bangla_medium"
                 android:text="সম্মত আছেন"
                 android:textColor="@color/black"
-                android:textSize="@dimen/_15sp" />
+                android:textSize="@dimen/_titleSmall" />
 
 
         </LinearLayout>

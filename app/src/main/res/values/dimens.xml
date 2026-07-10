@@ -2,6 +2,21 @@
 
     <dimen name="_toolbarText">@dimen/_17sp</dimen>
 
+    <dimen name="_labelSmall">@dimen/_11sp</dimen>
+    <dimen name="_labelMedium">@dimen/_12sp</dimen>
+    <dimen name="_labelLarge">@dimen/_14sp</dimen>
+
+    <dimen name="_bodySmall">@dimen/_12sp</dimen>
+    <dimen name="_bodyMedium">@dimen/_14sp</dimen>
+    <dimen name="_bodyLarge">@dimen/_16sp</dimen>
+
+    <dimen name="_titleSmall">@dimen/_14sp</dimen>
+    <dimen name="_titleMedium">@dimen/_16sp</dimen>
+    <dimen name="_titleLarge">@dimen/_22sp</dimen>
+
+    <dimen name="_headlineSmall">@dimen/_24sp</dimen>
+    <dimen name="_headlineMedium">@dimen/_28sp</dimen>
+    <dimen name="_headlineLarge">@dimen/_32sp</dimen>
 
     <dimen name="_0dp">0dp</dimen>
     <dimen name="_0.5dp">0.5dp</dimen>

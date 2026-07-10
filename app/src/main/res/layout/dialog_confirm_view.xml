@@ -3,17 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_dialog"
-    android:orientation="vertical"
-    android:layout_marginBottom="@dimen/_16dp"
     android:layout_marginHorizontal="@dimen/_8dp"
-    android:paddingHorizontal="@dimen/_16dp">
+    android:layout_marginBottom="@dimen/_16dp"
+    android:background="@drawable/bg_dialog"
+    android:orientation="vertical">
 
     <RelativeLayout
         android:id="@+id/topLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_65dp">
+        android:layout_marginTop="@dimen/_65dp"
+        android:paddingHorizontal="@dimen/_16dp">
 
         <ImageView
             android:id="@+id/close"
@@ -25,25 +25,26 @@
 
         <TextView
             android:id="@+id/title"
-            android:textColor="@color/primary"
-            android:fontFamily="@font/bangla_medium"
-            android:textSize="@dimen/_17sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_toStartOf="@id/close"
+            android:fontFamily="@font/bangla_medium"
             android:paddingEnd="@dimen/_16dp"
-            android:text="মোবাইল রিচারজ নিশ্চিত করুন" />
+            android:text="মোবাইল রিচারজ নিশ্চিত করুন"
+            android:textColor="@color/primary"
+            android:textSize="@dimen/_17sp" />
 
 
     </RelativeLayout>
 
     <RelativeLayout
-        android:layout_below="@id/topLayout"
         android:id="@+id/mainLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/topLayout"
         android:background="@drawable/bg_ripple_primary2"
         android:minHeight="64dp"
+        android:paddingHorizontal="@dimen/_16dp"
         android:paddingVertical="@dimen/_16dp">
 
         <ImageView
@@ -111,26 +112,22 @@
     </RelativeLayout>
 
     <TableLayout
-        android:layout_below="@id/mainLayout"
         android:id="@+id/tableLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:stretchColumns="*"/>
-
-
-    <LinearLayout
         android:layout_below="@id/mainLayout"
-        android:id="@+id/tableContainer"
+        android:stretchColumns="*" />
+
+    <com.holystock.newmyoffer.views.HoldAnimatedButtonView
+        android:id="@+id/holdButton"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"/>
-
-
-    <View
+        android:layout_height="165dp"
         android:layout_alignParentBottom="true"
-        android:layout_gravity="bottom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        app:btn_background_color="@color/primary"
+        app:btn_stroke_color="@color/primary"
+        app:btn_stroke_shadow_color="@color/primaryLight"
+        app:btn_stroke_shadow_radius="16.0"
+        app:btn_stroke_width="@dimen/_8dp" />
 
 
 </RelativeLayout>

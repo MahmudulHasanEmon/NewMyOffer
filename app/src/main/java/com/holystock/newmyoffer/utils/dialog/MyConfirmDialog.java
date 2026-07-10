@@ -1,5 +1,6 @@
 package com.holystock.newmyoffer.utils.dialog;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
@@ -7,6 +8,7 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.GradientDrawable;
+import android.os.Handler;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -14,6 +16,7 @@ import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import androidx.annotation.NonNull;
@@ -24,6 +27,7 @@ import com.holystock.newmyoffer.R;
 import com.holystock.newmyoffer.controller.RichTextBuilder;
 import com.holystock.newmyoffer.model.Confirm;
 import com.holystock.newmyoffer.model.TextSegment;
+import com.holystock.newmyoffer.views.HoldAnimatedButtonView;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -33,11 +37,13 @@ import java.util.Map;
 public final class MyConfirmDialog {
 
     private static Dialog dialog;
+    private static Activity activity;
 
     private MyConfirmDialog() {
         // Prevent instantiation
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     public static void show(@NonNull Context context,
                             @NonNull Confirm confirm,
                             View.OnClickListener okListener) {
@@ -49,7 +55,7 @@ public final class MyConfirmDialog {
             return;
         }
 
-        Activity activity = (Activity) context;
+        activity = (Activity) context;
 
         if (activity.isFinishing()) {
             return;
@@ -102,6 +108,23 @@ public final class MyConfirmDialog {
         data.put("New Balance", "3985");
 
         buildTable(table, data);
+
+
+
+        HoldAnimatedButtonView button = dialog.findViewById(R.id.holdButton);
+        //button.setMessage("Delete Account");
+
+        button.setOnCompleteListener(() -> {
+
+            Toast.makeText(activity,
+                    "Completed",
+                    Toast.LENGTH_SHORT).show();
+
+        });
+
+
+
+
 
 
         try {

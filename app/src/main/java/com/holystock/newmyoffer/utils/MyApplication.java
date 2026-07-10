@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 
 import java.util.Locale;
 
-public class myApplication extends Application implements Application.ActivityLifecycleCallbacks{
+public class MyApplication extends Application implements Application.ActivityLifecycleCallbacks{
 
     private int activityReferences = 0;
     private long lastBackgroundTime = 0;
@@ -56,6 +56,9 @@ public class myApplication extends Application implements Application.ActivityLi
         getBaseContext().getResources().updateConfiguration(config,
                 getBaseContext().getResources().getDisplayMetrics());
         registerActivityLifecycleCallbacks(this);
+
+        LanguageManager.get().init(this);
+
     }
 
 }

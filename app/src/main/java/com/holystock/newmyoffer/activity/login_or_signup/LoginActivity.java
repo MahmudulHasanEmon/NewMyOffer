@@ -1,13 +1,14 @@
 package com.holystock.newmyoffer.activity.login_or_signup;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
 import android.widget.TextView;
 
 import com.holystock.newmyoffer.R;
 import com.holystock.newmyoffer.activity.BaseActivity;
+import com.holystock.newmyoffer.utils.LanguageManager;
 import com.holystock.newmyoffer.utils.appThemes.Status;
+import com.holystock.newmyoffer.views.LanguageToggleButton;
 
 public class LoginActivity extends BaseActivity {
 
@@ -23,6 +24,11 @@ public class LoginActivity extends BaseActivity {
 
         //findViewById(R.id.nextBtn).setOnClickListener(v -> startActivity(new Intent(this, OtpActivity.class)));
         findViewById(R.id.nextBtn).setOnClickListener(v -> openActivity(OtpActivity.class,null));
+
+        LanguageToggleButton toggle = findViewById(R.id.languageToggle);
+        toggle.init(this);
+
+        LanguageManager.get().bind(this, findViewById(R.id.tvTitle), "login_or_register");
 
 
     }

@@ -55,28 +55,49 @@
     </declare-styleable>
 
         <declare-styleable name="Toolbar">
-
             <attr name="titleTextSize" format="dimension"/>
-
             <attr name="menu" format="reference"/>
-
             <attr name="toolbarTitle" format="string"/>
-
             <attr name="titleCentered" format="boolean"/>
-
             <attr name="showBackButton" format="boolean"/>
-
             <attr name="navigationIcon" format="reference"/>
-
             <attr name="navigationTint" format="color"/>
-
             <attr name="titleColor" format="color"/>
-
             <attr name="toolbarBackground" format="color"/>
-
             <attr name="toolbarHeight" format="dimension"/>
-
         </declare-styleable>
 
+    <declare-styleable name="HoldAnimatedButtonView">
+        <attr name="btn_background_color" format="color" />
+        <attr name="btn_stroke_color" format="color" />
+        <attr name="btn_stroke_width" format="dimension" />
+
+        <attr name="btn_stroke_shadow_radius" format="float" />
+        <attr name="btn_stroke_shadow_color" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="LanguageToggleButton">
+        <attr name="lang_left_text" format="string" />
+        <attr name="lang_right_text" format="string" />
+        <attr name="lang_bg_color" format="color" />
+        <attr name="lang_selector_color" format="color" />
+        <attr name="lang_text_color_active" format="color" />
+        <attr name="lang_text_color_inactive" format="color" />
+        <attr name="lang_selector_stroke_width" format="dimension" />
+
+        <attr name="lang_font_family" format="reference" />
+        <attr name="lang_text_size" format="dimension" />
+    </declare-styleable>
+
+
+    <declare-styleable name="LangView">
+
+        <!-- Text -->
+        <attr name="langKey" format="string"/>
+
+        <!-- Hint -->
+        <attr name="langHintKey" format="string"/>
+
+    </declare-styleable>
 
 </resources>
