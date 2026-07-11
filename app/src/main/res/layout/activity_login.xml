@@ -37,7 +37,6 @@
             android:layout_below="@id/languageToggle"
             android:layout_centerHorizontal="true"
             android:layout_marginHorizontal="@dimen/_20dp"
-            android:layout_marginTop="@dimen/_20dp"
             android:src="@drawable/login_bg" />
 
         <TextView
@@ -91,6 +90,8 @@
                 android:textSize="@dimen/_titleMedium" />
 
             <EditText
+                android:id="@+id/edNomber"
+                android:text="0184541670"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_centerVertical="true"
@@ -114,7 +115,7 @@
             android:layout_height="@dimen/_50dp"
             android:layout_below="@id/ed_view"
             android:layout_marginHorizontal="@dimen/_15dp"
-            android:layout_marginTop="@dimen/_25dp"
+            android:layout_marginTop="17dp"
             app:bgColor="@color/unselected"
             app:borderColor="@color/greyLight"
             app:borderWidth="@dimen/_0dp"
@@ -129,7 +130,7 @@
                 android:gravity="center"
                 android:text="পরবর্তী এগিয়ে যান"
                 android:textColor="@color/white"
-                android:textSize="@dimen/_14sp" />
+                android:textSize="@dimen/_titleMedium" />
 
         </com.holystock.newmyoffer.views.BorderView>
 

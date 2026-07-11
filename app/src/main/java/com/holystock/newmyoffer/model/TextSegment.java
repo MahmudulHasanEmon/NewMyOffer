@@ -57,7 +57,7 @@ public class TextSegment {
         return style;
     }
 
-    public TextSegment setStyle(int style) {
+    public TextSegment setTextStyle(int style) {
         this.style = style;
         return this;
     }

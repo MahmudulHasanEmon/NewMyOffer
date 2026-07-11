@@ -128,6 +128,11 @@ public class Helper {
         }
     }
 
+    public static boolean isBangladeshiMobile(String phone) {
+
+        return phone.matches("^01[3-9]\\d{8}$");
+    }
+
     public static String getNumericValue(String text) {
         return text.replaceAll("[^0-9]", "");
     }

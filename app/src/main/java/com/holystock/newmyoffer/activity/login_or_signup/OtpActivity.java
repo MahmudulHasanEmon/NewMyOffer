@@ -12,6 +12,7 @@ import androidx.core.view.WindowInsetsCompat;
 import com.holystock.newmyoffer.R;
 import com.holystock.newmyoffer.activity.BaseActivity;
 import com.holystock.newmyoffer.utils.appThemes.Status;
+import com.holystock.newmyoffer.views.LanguageToggleButton;
 
 public class OtpActivity extends BaseActivity {
 
@@ -21,6 +22,9 @@ public class OtpActivity extends BaseActivity {
         setContentView(R.layout.activity_otp);
 
         new Status(this).setLightStatusBar();
+
+        findViewById(R.id.back).setOnClickListener(v -> finish());
+
 
         findViewById(R.id.nextBtn).setOnClickListener(v -> openActivity(PinActivity.class,null));
 

@@ -26,7 +26,6 @@
                 android:layout_centerHorizontal="true"
                 android:layout_gravity="center"
                 android:layout_marginHorizontal="@dimen/_20dp"
-                android:layout_marginVertical="@dimen/_5dp"
                 android:src="@drawable/login_pin_bg" />
 
             <TextView
@@ -34,22 +33,33 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="@dimen/_10dp"
-                android:fontFamily="@font/bangla_bold"
+                android:fontFamily="@font/bangla_medium"
                 android:lineSpacingMultiplier="0.8"
                 android:text="আপনার প্যানেল একাউন্টে \nলগইন করুন"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_19sp" />
+                android:textColor="@color/greyDark"
+                android:textSize="@dimen/_titleLarge" />
 
             <TextView
+                android:id="@+id/tvNumber"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="@dimen/_20dp"
                 android:fontFamily="@font/bangla"
-                android:lineSpacingMultiplier="0.8"
-                android:text="একাউন্ট নাম্বার \n+8801775185654"
+                android:text="একাউন্ট নাম্বার \njbjbjj"
+                android:lineSpacingMultiplier="0.75"
                 android:textColor="@color/black"
-                android:textSize="@dimen/_14sp" />
+                android:textSize="@dimen/_titleSmall" />
+
+            <!--<TextView
+                android:id="@+id/tvNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/bangla"
+                android:text="+8801775185654"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_titleMedium" />-->
 
             <View
                 android:layout_width="match_parent"
@@ -65,11 +75,10 @@
                 android:layout_marginHorizontal="@dimen/_5dp"
                 android:layout_marginTop="@dimen/_10dp"
                 android:drawableEnd="@drawable/keyboard_hide_24dp"
-                android:fontFamily="@font/bangla_bold"
-                android:lineSpacingMultiplier="0.8"
-                android:text="পিন লিখুন "
-                android:textColor="@color/grey"
-                android:textSize="@dimen/_15sp" />
+                android:fontFamily="@font/bangla_medium"
+                android:text="পিন নাম্বার লিখুন"
+                android:textColor="@color/greyDark"
+                android:textSize="@dimen/_titleSmall" />
 
         </LinearLayout>
 

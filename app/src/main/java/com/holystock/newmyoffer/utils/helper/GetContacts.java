@@ -1,5 +1,7 @@
 package com.holystock.newmyoffer.utils.helper;
 
+import static com.holystock.newmyoffer.utils.Helper.isBangladeshiMobile;
+
 import android.content.Context;
 import android.database.Cursor;
 import android.provider.ContactsContract;
@@ -266,11 +268,6 @@ public class GetContacts {
         }
 
         return phone;
-    }
-
-    public static boolean isBangladeshiMobile(String phone) {
-
-        return phone.matches("^01[3-9]\\d{8}$");
     }
 
     public static ArrayList<Contact> filterContacts(

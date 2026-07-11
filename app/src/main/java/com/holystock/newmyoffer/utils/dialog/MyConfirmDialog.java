@@ -8,7 +8,6 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.GradientDrawable;
-import android.os.Handler;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -84,11 +83,11 @@ public final class MyConfirmDialog {
         ArrayList<TextSegment> list = new ArrayList<>();
 
         list.clear();
-        list.add(new TextSegment(confirm.getHeaderTitle()+" ").setTextColor(activity.getColor(R.color.primary)).setStyle(Typeface.BOLD));
+        list.add(new TextSegment(confirm.getHeaderTitle()+" ").setTextColor(activity.getColor(R.color.primary)).setTextStyle(Typeface.BOLD));
         list.add(
                 new TextSegment(confirm.getSubTitle())
                         .setTextColor(activity.getColor(R.color.primary))
-                        .setStyle(Typeface.NORMAL)
+                        .setTextStyle(Typeface.NORMAL)
                         .setTextSize(16)
         );
 

@@ -20,9 +20,9 @@
         <ImageView
             android:layout_width="@dimen/_200dp"
             android:layout_height="200dp"
+            android:layout_marginTop="@dimen/_10dp"
             android:layout_centerHorizontal="true"
             android:layout_marginHorizontal="@dimen/_20dp"
-            android:layout_marginTop="@dimen/_20dp"
             android:src="@drawable/login_otp_bg" />
 
         <TextView
@@ -32,7 +32,7 @@
             android:fontFamily="@font/bangla_bold"
             android:text="ভেরিফিকেশন কোড"
             android:textColor="@color/black"
-            android:textSize="@dimen/_24sp" />
+            android:textSize="@dimen/_titleLarge" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -40,8 +40,8 @@
             android:layout_centerHorizontal="true"
             android:fontFamily="@font/bangla_medium"
             android:text="ভেরিফিকেশন কোড এই নাম্বারে পঠানো হয়েছে "
-            android:textColor="#bbb"
-            android:textSize="@dimen/_14sp" />
+            android:textColor="@color/greyHint"
+            android:textSize="@dimen/_titleSmall" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -56,10 +56,11 @@
                 android:fontFamily="@font/bangla_medium"
                 android:text="+8801775185654"
                 android:textColor="@color/black"
-                android:textSize="@dimen/_14sp" />
+                android:textSize="@dimen/_titleSmall" />
 
 
             <com.holystock.newmyoffer.views.BorderView
+                android:id="@+id/back"
                 android:layout_width="@dimen/_35dp"
                 android:layout_height="@dimen/_35dp"
                 android:layout_marginStart="@dimen/_10dp"
@@ -151,7 +152,7 @@
             android:fontFamily="@font/bangla_semi_bold"
             android:text="পুনরায় কোড পাঠান"
             android:textColor="@color/primary"
-            android:textSize="@dimen/_12sp" />
+            android:textSize="@dimen/_labelMedium" />
 
         <com.holystock.newmyoffer.views.BorderView
             android:id="@+id/nextBtn"
@@ -173,7 +174,7 @@
                 android:gravity="center"
                 android:text="নিশ্চিত করুন"
                 android:textColor="@color/white"
-                android:textSize="@dimen/_14sp" />
+                android:textSize="@dimen/_titleMedium" />
 
         </com.holystock.newmyoffer.views.BorderView>
 

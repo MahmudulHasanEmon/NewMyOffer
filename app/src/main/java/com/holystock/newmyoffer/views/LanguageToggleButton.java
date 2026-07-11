@@ -112,7 +112,7 @@ public class LanguageToggleButton extends View {
 
 
     public void init(AppCompatActivity activity) {
-        toggle("bn".equals(
+        toggleNoAnim("bn".equals(
                 activity.getSharedPreferences("settings", Context.MODE_PRIVATE)
                         .getString("language", "en")));
 
@@ -192,6 +192,24 @@ public class LanguageToggleButton extends View {
             invalidate();
         });
         animator.start();
+
+        if (listener != null) {
+            listener.onToggle(isRightSelected);
+        }
+    }
+
+    public void toggleNoAnim(boolean rightSide) {
+        if (this.isRightSelected == rightSide) return;
+
+        this.isRightSelected = rightSide;
+
+        if (animator != null) {
+            animator.cancel();
+            animator = null;
+        }
+
+        animationProgress = isRightSelected ? 1f : 0f;
+        invalidate();
 
         if (listener != null) {
             listener.onToggle(isRightSelected);

@@ -2,7 +2,6 @@ package com.holystock.newmyoffer.activity.service.recharge;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -239,7 +238,7 @@ public class RechargeNumberActivity extends BaseActivity {
 
         ArrayList<TextSegment> list = new ArrayList<>();
 
-        if (!GetContacts.isBangladeshiMobile(number)) {
+        if (!Helper.isBangladeshiMobile(number)) {
 
             nextBtn.setVisibility(View.GONE);
 

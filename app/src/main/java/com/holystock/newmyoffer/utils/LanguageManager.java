@@ -77,7 +77,7 @@ public class LanguageManager {
                             context.getResources().openRawResource(id))
                             .useDelimiter("\\A")
                             .next();
-            
+
             JSONObject object = new JSONObject(json);
 
             strings.clear();

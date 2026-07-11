@@ -28,7 +28,7 @@
             android:fontFamily="@font/bangla_medium"
             android:text="পরবর্তী এগিয়ে যান"
             android:textColor="@color/white"
-            android:textSize="@dimen/_15sp" />
+            android:textSize="@dimen/_titleMedium" />
 
     </RelativeLayout>
 
