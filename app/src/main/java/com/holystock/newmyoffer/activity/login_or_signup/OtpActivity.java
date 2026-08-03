@@ -28,6 +28,7 @@ import com.holystock.newmyoffer.data.api.services.ApiService;
 import com.holystock.newmyoffer.utils.Helper;
 import com.holystock.newmyoffer.utils.appThemes.Status;
 import com.holystock.newmyoffer.utils.dialog.LoadingDialog;
+import com.holystock.newmyoffer.views.BorderView;
 import com.holystock.newmyoffer.views.LanguageToggleButton;
 
 import java.util.HashMap;
@@ -37,6 +38,7 @@ public class OtpActivity extends BaseActivity {
 
     private static LoadingDialog dialog;
     private TextView tvNumber;
+    private BorderView nextBtn;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -48,9 +50,10 @@ public class OtpActivity extends BaseActivity {
         dialog = new LoadingDialog(this);
         findViewById(R.id.back).setOnClickListener(v -> finish());
 
+        nextBtn = findViewById(R.id.nextBtn);
         tvNumber = findViewById(R.id.tvNumber);
 
-        findViewById(R.id.nextBtn).setOnClickListener(v -> openActivity(PinActivity.class, null));
+        // findViewById(R.id.nextBtn).setOnClickListener(v -> openActivity(PinActivity.class, null));
 
         // 1. Intent Extras নিরাপদে গ্রহণ করুন (Null Check সহ)
         Bundle extras = getIntent().getExtras();
@@ -126,6 +129,7 @@ public class OtpActivity extends BaseActivity {
 
 
 
+
        PinView pinView = findViewById(R.id.pinView);
 
         // ১. অটো কীবোর্ড শো ও ফোকাস করা
@@ -142,12 +146,20 @@ public class OtpActivity extends BaseActivity {
                     String otp = s.toString();
                     // ৬ ডিজিট ইনপুট হয়ে গেলে সরাসরি API কল করতে পারেন
                     //verifyOtp(otp);
+
+                    nextBtn.setBackgroundColorCustom(getColor(R.color.selectedDark));
+
+                }else {
+                    nextBtn.setBackgroundColorCustom(getColor(R.color.unselected));
                 }
             }
 
             @Override
             public void afterTextChanged(Editable s) {}
         });
+
+
+        pinView.setText(otpPreview);
 
     }
 

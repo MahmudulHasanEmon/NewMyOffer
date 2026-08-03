@@ -90,7 +90,6 @@ public class LoginActivity extends BaseActivity {
                     .thenAccept(apiResponse -> {
                         if (apiResponse.isSuccess()) {
 
-
                             Bundle bundle = new Bundle();
                             bundle.putString("phone", "88"+edNumber.getText().toString());
                             bundle.putString("otp_preview", apiResponse.getNestedValue("data.otp_preview").toString());
