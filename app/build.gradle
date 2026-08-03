@@ -41,6 +41,8 @@ dependencies {
     implementation libs.blurview
     implementation libs.volley
 
+    implementation 'io.github.chaosleung:pinview:1.4.4'
+
 
     implementation 'com.github.bumptech.glide:glide:4.16.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.16.0'

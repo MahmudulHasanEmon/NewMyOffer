@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- সিলেক্টেড বা ফোকাস থাকা অবস্থায় বর্ডারের কালার -->
+    <item android:state_focused="true" android:color="@color/greyBorder" />
+    <!-- সাধারণ অবস্থায় বর্ডারের কালার -->
+    <item android:color="@color/primary" />
+</selector>
