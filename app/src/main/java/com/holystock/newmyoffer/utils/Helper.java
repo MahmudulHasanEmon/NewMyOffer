@@ -13,6 +13,8 @@ import java.text.DecimalFormat;
 
 public class Helper {
 
+    public static final String TAG = "AppLog";
+
     public static final int[] lightColors = {
             Color.parseColor("#FFCDD2"),
             Color.parseColor("#F8BBD0"),

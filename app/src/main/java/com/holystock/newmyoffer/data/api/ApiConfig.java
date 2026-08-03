@@ -1,5 +1,7 @@
 package com.holystock.newmyoffer.data.api;
 
+import com.holystock.newmyoffer.utils.Config;
+
 public final class ApiConfig {
 
     // Private constructor to prevent instantiation

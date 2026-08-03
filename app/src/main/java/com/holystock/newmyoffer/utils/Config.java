@@ -1,4 +1,4 @@
-package com.holystock.newmyoffer.data.api;
+package com.holystock.newmyoffer.utils;
 
 public final class Config {
 

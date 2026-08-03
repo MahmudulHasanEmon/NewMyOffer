@@ -8,6 +8,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 
+import com.holystock.newmyoffer.data.api.services.VolleySingleton;
 import com.holystock.newmyoffer.utils.helpers.AppPreferences;
 
 import java.util.Locale;
@@ -62,6 +63,7 @@ public class MyApplication extends Application implements Application.ActivityLi
         LanguageManager.get().init(this);
 
         AppPreferences.init(this);
+        VolleySingleton.initialize(this);
 
     }
 

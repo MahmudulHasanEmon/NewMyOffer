@@ -1,13 +1,15 @@
 package com.holystock.newmyoffer.utils.helpers;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Build;
+import android.provider.Settings;
 
-public final class DeviceHelper {
+public final class DeviceUtils {
 
-    private DeviceHelper() {
+    private DeviceUtils() {
         throw new UnsupportedOperationException("Utility class cannot be instantiated");
     }
 
@@ -45,5 +47,27 @@ public final class DeviceHelper {
     }
 
 
+    /**
+     * Gets the unique Android Device ID.
+     *
+     * @param context Application or Activity context
+     * @return 64-bit unique ID string, or "unknown" if unavailable
+     */
+    public static String getDeviceId(Context context) {
+        if (context == null) return "unknown";
+
+        try {
+            @SuppressLint("HardwareIds")
+            String androidId = Settings.Secure.getString(
+                    context.getContentResolver(),
+                    Settings.Secure.ANDROID_ID
+            );
+
+            return (androidId != null) ? androidId : "unknown";
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "unknown";
+        }
+    }
 
 }
