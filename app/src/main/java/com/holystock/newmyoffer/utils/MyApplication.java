@@ -8,6 +8,8 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 
+import com.holystock.newmyoffer.utils.helpers.AppPreferences;
+
 import java.util.Locale;
 
 public class MyApplication extends Application implements Application.ActivityLifecycleCallbacks{
@@ -58,6 +60,8 @@ public class MyApplication extends Application implements Application.ActivityLi
         registerActivityLifecycleCallbacks(this);
 
         LanguageManager.get().init(this);
+
+        AppPreferences.init(this);
 
     }
 

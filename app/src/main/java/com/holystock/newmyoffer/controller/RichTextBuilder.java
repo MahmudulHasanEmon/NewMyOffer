@@ -18,7 +18,7 @@ import android.text.style.UnderlineSpan;
 import android.view.View;
 import android.widget.TextView;
 
-import com.holystock.newmyoffer.model.TextSegment;
+import com.holystock.newmyoffer.data.model.TextSegment;
 
 import java.util.List;
 

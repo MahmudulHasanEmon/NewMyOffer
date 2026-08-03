@@ -24,8 +24,8 @@ import androidx.core.content.res.ResourcesCompat;
 
 import com.holystock.newmyoffer.R;
 import com.holystock.newmyoffer.controller.RichTextBuilder;
-import com.holystock.newmyoffer.model.Confirm;
-import com.holystock.newmyoffer.model.TextSegment;
+import com.holystock.newmyoffer.data.model.Confirm;
+import com.holystock.newmyoffer.data.model.TextSegment;
 import com.holystock.newmyoffer.views.HoldAnimatedButtonView;
 
 import java.util.ArrayList;

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:backgroundTint="@android:color/transparent"
+    android:background="@android:color/transparent"
+    android:gravity="center">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/_30dp"
+        app:cardElevation="@dimen/_2dp">
+
+        <RelativeLayout
+            android:layout_width="@dimen/_100dp"
+            android:layout_height="@dimen/_100dp"
+            android:background="@color/white">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/lottieProgressBar"
+                android:layout_width="@dimen/_120dp"
+                android:layout_height="@dimen/_120dp"
+                android:layout_centerInParent="true"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/my_offer_loding_animation"
+                app:lottie_speed="1.5" />
+
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>

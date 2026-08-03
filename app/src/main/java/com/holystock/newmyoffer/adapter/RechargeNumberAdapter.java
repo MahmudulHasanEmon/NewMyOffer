@@ -1,7 +1,5 @@
 package com.holystock.newmyoffer.adapter;
 
-import android.content.ClipData;
-import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
@@ -13,7 +11,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
@@ -22,12 +19,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.holystock.newmyoffer.R;
-import com.holystock.newmyoffer.model.Contact;
+import com.holystock.newmyoffer.data.model.Contact;
 import com.holystock.newmyoffer.utils.Helper;
 import com.holystock.newmyoffer.views.BorderView;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashSet;
 
 public class RechargeNumberAdapter

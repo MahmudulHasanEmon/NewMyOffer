@@ -1,6 +1,7 @@
 package com.holystock.newmyoffer.activity.login_or_signup;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.Editable;
 import android.text.Html;
 import android.text.TextWatcher;
@@ -12,6 +13,7 @@ import com.holystock.newmyoffer.activity.BaseActivity;
 import com.holystock.newmyoffer.utils.Helper;
 import com.holystock.newmyoffer.utils.LanguageManager;
 import com.holystock.newmyoffer.utils.appThemes.Status;
+import com.holystock.newmyoffer.utils.dialog.LoadingDialog;
 import com.holystock.newmyoffer.views.BorderView;
 import com.holystock.newmyoffer.views.LanguageToggleButton;
 
@@ -19,6 +21,7 @@ public class LoginActivity extends BaseActivity {
 
     private EditText edNomber;
     private BorderView nextBtn;
+    private LoadingDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +29,7 @@ public class LoginActivity extends BaseActivity {
         setContentView(R.layout.activity_login);
 
         new Status(this).setLightStatusBar();
+        dialog = new LoadingDialog(this);
 
         TextView tvTerms = findViewById(R.id.tvTerms);
         tvTerms.setText(Html.fromHtml("<u>নিয়ম ও শর্তসমূহ</u>", Html.FROM_HTML_MODE_LEGACY));
@@ -43,7 +47,6 @@ public class LoginActivity extends BaseActivity {
 
         nextBtn.setBackgroundColorCustom(getColor(R.color.unselected));
         nextBtn.setClickable(false);
-
 
         edNomber.addTextChangedListener(new TextWatcher() {
             @Override
@@ -70,6 +73,10 @@ public class LoginActivity extends BaseActivity {
             }
         });
 
+        dialog.start();
+        new Handler().postDelayed(() -> {
+            dialog.dismiss();
+        }, 5000);
 
 
     }

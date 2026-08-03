@@ -1,4 +1,4 @@
-package com.holystock.newmyoffer.model;
+package com.holystock.newmyoffer.data.model;
 
 import java.io.Serializable;
 

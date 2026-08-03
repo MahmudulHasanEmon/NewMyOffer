@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.holystock.newmyoffer.R;
-import com.holystock.newmyoffer.model.TextSegment;
+import com.holystock.newmyoffer.data.model.TextSegment;
 
 import java.util.ArrayList;
 import java.util.HashMap;

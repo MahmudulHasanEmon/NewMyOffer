@@ -24,12 +24,11 @@ import com.holystock.newmyoffer.activity.BaseActivity;
 import com.holystock.newmyoffer.adapter.RechargeNumberAdapter;
 import com.holystock.newmyoffer.controller.RechargeSheetController;
 import com.holystock.newmyoffer.controller.RichTextBuilder;
-import com.holystock.newmyoffer.model.Contact;
-import com.holystock.newmyoffer.model.TextSegment;
+import com.holystock.newmyoffer.data.model.Contact;
+import com.holystock.newmyoffer.data.model.TextSegment;
 import com.holystock.newmyoffer.utils.Helper;
-import com.holystock.newmyoffer.utils.appThemes.AppToolbarManager;
 import com.holystock.newmyoffer.utils.appThemes.Status;
-import com.holystock.newmyoffer.utils.helper.GetContacts;
+import com.holystock.newmyoffer.utils.helpers.GetContacts;
 import com.holystock.newmyoffer.views.BorderView;
 
 import java.util.ArrayList;

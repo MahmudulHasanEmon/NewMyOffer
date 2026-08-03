@@ -10,7 +10,7 @@ import com.holystock.newmyoffer.R;
 import com.holystock.newmyoffer.activity.BaseActivity;
 import com.holystock.newmyoffer.controller.KeyboardController;
 import com.holystock.newmyoffer.controller.RichTextBuilder;
-import com.holystock.newmyoffer.model.TextSegment;
+import com.holystock.newmyoffer.data.model.TextSegment;
 import com.holystock.newmyoffer.utils.appThemes.Status;
 import com.holystock.newmyoffer.views.BottomNextButtonView;
 

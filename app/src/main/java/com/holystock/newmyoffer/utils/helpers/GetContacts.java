@@ -1,4 +1,4 @@
-package com.holystock.newmyoffer.utils.helper;
+package com.holystock.newmyoffer.utils.helpers;
 
 import static com.holystock.newmyoffer.utils.Helper.isBangladeshiMobile;
 
@@ -7,7 +7,7 @@ import android.database.Cursor;
 import android.provider.ContactsContract;
 import android.util.Log;
 
-import com.holystock.newmyoffer.model.Contact;
+import com.holystock.newmyoffer.data.model.Contact;
 
 import java.text.Collator;
 import java.util.ArrayList;
