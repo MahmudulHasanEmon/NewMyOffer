@@ -24,7 +24,7 @@ public class MyApplication extends Application implements Application.ActivityLi
         if (activityReferences == 0 && System.currentTimeMillis() - lastBackgroundTime > TIMEOUT) {
             // অ্যাপ ব্যাকগ্রাউন্ড থেকে ফিরেছে এবং সময় পার হয়ে গেছে
             if (!(activity instanceof com.holystock.newmyoffer.activity.WelcomeActivity)) {
-                Intent intent = new Intent(activity, com.holystock.newmyoffer.activity.login_or_signup.LoginActivity.class);
+                Intent intent = new Intent(activity, com.holystock.newmyoffer.activity.login_or_register.LoginActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                 activity.startActivity(intent);
                 activity.finish();

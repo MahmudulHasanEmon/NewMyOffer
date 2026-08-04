@@ -1,4 +1,4 @@
-package com.holystock.newmyoffer.activity.login_or_signup;
+package com.holystock.newmyoffer.activity.login_or_register;
 
 import android.content.Intent;
 import android.graphics.Typeface;

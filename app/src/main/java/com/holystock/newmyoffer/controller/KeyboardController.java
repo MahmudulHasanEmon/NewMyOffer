@@ -5,12 +5,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
 import com.holystock.newmyoffer.R;
-import com.holystock.newmyoffer.activity.login_or_signup.PinActivity;
+import com.holystock.newmyoffer.activity.login_or_register.PinActivity;
 
 public class KeyboardController {
 

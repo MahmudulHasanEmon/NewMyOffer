@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/statusBar"
-    tools:context=".activity.login_or_signup.PinActivity">
+    tools:context=".activity.login_or_register.PinActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"

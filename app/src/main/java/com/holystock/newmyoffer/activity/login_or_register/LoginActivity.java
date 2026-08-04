@@ -1,7 +1,6 @@
-package com.holystock.newmyoffer.activity.login_or_signup;
+package com.holystock.newmyoffer.activity.login_or_register;
 
 import android.os.Bundle;
-import android.os.Handler;
 import android.text.Editable;
 import android.text.Html;
 import android.text.TextWatcher;
@@ -11,7 +10,6 @@ import android.widget.TextView;
 
 import com.holystock.newmyoffer.R;
 import com.holystock.newmyoffer.activity.BaseActivity;
-import com.holystock.newmyoffer.activity.service.recharge.RechargeOfferActivity;
 import com.holystock.newmyoffer.data.api.ApiConfig;
 import com.holystock.newmyoffer.data.api.services.ApiService;
 import com.holystock.newmyoffer.utils.Helper;
